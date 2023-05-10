@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<title>个人中心</title>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	<style type="text/css">
+		h3 {
+			font-size: 24px;
+		}
+		h1, h2, h3 {
+			margin-top: 20px;
+			margin-bottom: 10px;
+		}
+		h1, h2, h3, h4, h5, h6 {
+			font-family: inherit;
+			font-weight: 500;
+			line-height: 1.1;
+			color: inherit;
+		}
+		.timer b {
+			font-size: 100px;
+		}
+		b, strong {
+			font-weight: 700;
+		}
+		.box{
+			color: #fff;
+		}
+	</style>
+
+	<!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+	<!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+	<!--[if lt IE 9]>
+	<script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+
+	<![endif]-->
+</head>
+<body style="background:rgba(0,0,0,0);">
+<div class="container" style="background:rgba(255,255,255,0);" id="view">
+	<div class="box">
+		<div class="jumbotron text-center" style="background: rgba(59, 59, 59, 0);">
+			<h1 id="nickname"></h1>
+			<h1>您来到我们的网站已经有</h1>
+			<h3 class="timer">
+				<div class="row">
+					<b id="d">-</b> 天 <b id="h">-</b> 时 <b id="m">-</b> 分
+				</div>
+				<div class="row">
+					<b id="s">-</b> 秒
+				</div>
+			</h3>
+			<h1>感谢您的到来</h1>
+			<h1>！！！</h1>
+			<p>
+				<a id="to-start" class="btn btn-primary btn-lg" role="button">学习吧，GO！</a>
+				<a id="to-chat" class="btn btn-primary btn-lg" role="button" href="message.html" target="_blank">聊天吧，GO！</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src=" ../bootstrap/js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery.cookie.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script>
+	// 获取用户基本信息
+	var start = new Date();
+	$.post('/getUserProFileInfo', {user_id: $.cookie('id')},
+			function (res) {
+				let data = res['data']['data'];
+				if (data != null) {
+					start=new Date(data['register_time']);
+					$('#nickname').text(`嗨！${data['nickname']}，`);
+				}
+			});
+
+	$('#to-start').click(function () {
+		$(window.parent.document).find("#blog-button").click();
+		$(window.parent.document).find("#main-page").attr('src','static/view/blog.html');
+	});
+
+	function timer() {
+		const t = new Date() - start;
+		let h = ~~(t / 1000 / 60 / 60 % 24);
+		if (h < 10) {
+			h = "0" + h;
+		}
+		let m = ~~(t / 1000 / 60 % 60);
+		if (m < 10) {
+			m = "0" + m;
+		}
+
+		let s = ~~(t / 1000 % 60);
+		if (s < 10) {
+			s = "0" + s;
+		}
+		document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
+		document.getElementById('h').innerHTML = h;
+		document.getElementById('m').innerHTML = m;
+		document.getElementById('s').innerHTML = s;
+	}
+	timer();
+	setInterval(timer, 1000);
+</script>
+</body>
+</html>

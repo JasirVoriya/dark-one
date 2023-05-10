@@ -1,0 +1,141 @@
+.avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
+
+.title-bar {
+    background-color: #f3f3f3;
+    width: 100%;
+    height: 60px;
+    overflow: inherit;
+    position: relative;
+    flex: none;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.article-bar {
+    height: 100%;
+}
+
+.flex--align-center {
+    align-items: center;
+}
+
+.flex--row {
+    flex-direction: row;
+}
+
+.flex {
+    display: flex;
+}
+
+.input-box {
+    display: flex;
+    width: 100%;
+    margin: 8px 16px 8px 8px;
+    position: relative;
+}
+
+.title-input {
+    width: 100%;
+    margin-left: 4px;
+    border: 1px solid #ccc;
+    border-radius: 21px;
+    background-color: #fff;
+    padding: 8px 88px 8px 8px;
+    font-size: 18px;
+    line-height: 24px;
+    display: block;
+    font-variant-ligatures: no-common-ligatures;
+    height: 36px;
+    color: inherit;
+    outline: none;
+}
+
+.user-box {
+    padding: 8px 32px 8px 0;
+}
+
+.user-box .btn-save {
+    height: 40px;
+    margin-right: 16px;
+    padding: 0 16px;
+    font-size: 16px;
+    color: #00a1d6;
+    border: 1px solid #00a1d6;
+    border-radius: 18px;
+    white-space: nowrap;
+    background-color: #fff;
+}
+
+.btn-publish {
+    padding: 0 16px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    white-space: nowrap;
+    background: rgb(251, 114, 153);
+}
+
+.attr_bar {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    background: #d3ff60;
+}
+
+.attr_bar_item {
+    margin-left: 5px;
+    margin-right: 5px;
+    /*height: 25px;*/
+    font-size: 15px;
+    text-align: center;
+}
+
+.blog_mark {
+    display: inline;
+    padding: 0.2em 0.6em 0.3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25em;
+    background-color: #5bc0de;
+    cursor: pointer;
+}
+
+.mark_search_result {
+    margin: 5px 5px 5px 5px;
+    width: 98%;
+    background: #8dfdff;
+}
+
+.blog-mark-item {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: #777777;
+    border-radius: 10px;
+}
+
+.column-list {
+    margin: 5px 5px 5px 5px;
+}
+
+.column-item {
+    width: 100%;
+}

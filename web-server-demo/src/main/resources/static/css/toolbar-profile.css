@@ -1,0 +1,98 @@
+#toolbar-profile {
+    display: none;
+    width: 248px;
+    color: #222226;
+    background: #fff;
+    position: absolute;
+    min-height: 200px;
+    /* top: 48px; */
+    left: 50%;
+    margin-left: -124px;
+    z-index: 9999999;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 0 10px 2px rgb(0 0 0 / 6%);
+    box-shadow: 0 0 10px 2px rgb(0 0 0 / 6%);
+}
+
+#toolbar-profile .profile-top {
+    text-align: center;
+    padding: 20px 0 12px 0;
+    border-bottom: 1px solid #e8e8ed;
+}
+
+#toolbar-profile .profile-top .profile-nickname {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 16px;
+    font-size: 20px;
+    color: #222226;
+    font-weight: 1000;
+    height: 40px;
+    line-height: 40px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#toolbar-profile .profile-mid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    color: #999aaa;
+    font-size: 14px;
+    text-align: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #e8e8ed;
+}
+
+#toolbar-profile .profile-mid i {
+    font-size: 20px;
+    color: #222226;
+    font-style: normal;
+    font-weight: 600;
+    display: block;
+    line-height: 30px;
+    height: 30px;
+}
+
+#toolbar-profile .profile-mid a {
+
+    text-decoration: none; /*清除下划线  */
+    cursor: pointer;
+    color: #999aaa;
+}
+
+#toolbar-profile .profile-bottom {
+    text-align: left;
+}
+
+#toolbar-profile .profile-bottom ul {
+    padding: 8px 0;
+    font-weight: 400;
+    color: #555666;
+    border-radius: 0 0 4px 4px;
+}
+
+#toolbar-profile .profile-bottom ul li {
+    list-style: none; /*去除无序列表前面的符号*/
+}
+
+#toolbar-profile .profile-bottom ul li a {
+    text-decoration: none; /*清除下划线  */
+    cursor: pointer;
+    color: #999aaa;
+    display: inline-block;
+    position: relative;
+    margin-right: 8px;
+    vertical-align: middle;
+    top: -1px;
+    left: 16px;
+}
+
+.pb-8 {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}

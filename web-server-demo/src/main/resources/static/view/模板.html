@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>博客</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-dialog/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" href="../css/paginator.css">
+
+    <style>
+        .page-footer{
+            height: 300px;
+            width: 100%;
+            background-color: #0a001f;
+            /*position: fixed;*/
+            /*left: 0;*/
+            /*bottom: 0;*/
+        }
+    </style>
+</head>
+<body style="background:rgba(0,0,0,0);">
+<h1 style="background-color: #FFFFFF">博客</h1>
+<div class="blog-html">
+    <div class="page-wrap">
+    </div>
+    <div class="page-wrap">
+    </div>
+    <div class="page-wrap">
+    </div>
+    <div class="page-wrap">
+    </div>
+</div>
+<div class="page-footer"></div>
+</body>
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="../bootstrap/js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery.cookie.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../bootstrap-dialog/js/bootstrap-dialog.min.js"></script>
+<script src="../js/jqPaginator.js"></script>
+<script src="../js/paginator.js"></script>
+<script src="../js/default.js"></script>
+<script type="text/javascript">
+    $.paginator('.page-wrap', 50, 5, 1, function (num) {
+        console.log('当前第' + num + '页');
+    });
+
+</script>
+</html>

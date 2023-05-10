@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>发布文章</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/editor-md/css/editormd.css"/>
+    <link rel="stylesheet" href="/static/css/editor.css">
+</head>
+<body style="background:rgba(0,0,0,0);">
+<div class="title-bar">
+    <div>
+        <a class="navbar-brand" href="" style="font-weight: 900;">
+            <span style="color: crimson;">日</span><span style="color: black">月坞</span>
+        </a>
+        <span class="navbar-brand" style="color: gray">编写博客</span>
+    </div>
+    <div class="article-bar flex flex--row flex--align-center">
+        <div class="input-box">
+            <input maxlength="100" placeholder="请输入文章标题" class="title-input">
+        </div> <!---->
+        <div class="user-box flex flex--row">
+            <!--            <button class="btn-save">保存草稿</button>-->
+            <button class="btn-publish">发布文章</button>
+            <img alt="头像" class="avatar" style="display: none">
+        </div>
+    </div>
+</div>
+<div class="attr_bar flex flex--row flex--align-center">
+    <div class="dropdown attr_bar_item add_mark_dropdown">
+        <span class="btn btn-success" id="dropdownMenu1" data-toggle="dropdown">
+            <span class="glyphicon glyphicon-plus"></span>添加文章标签
+        </span>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu1" style="width: 380px">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="输入标签" id="input-mark">
+                    </div>
+                    <div class="col-sm-2">
+                        <span class="btn btn-danger" id="search-mark-btn">搜索</span>
+                    </div>
+                    <div class="col-sm-2">
+                        <span class="btn btn-danger" id="create-mark-btn">
+                            <span class="glyphicon glyphicon-plus"></span>新建标签
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="mark_search_result">
+            </div>
+            <div style="position: relative;left:175px">
+                <span class="btn btn-info save-mark-btn">保存</span>
+            </div>
+        </div>
+    </div>
+    <div class="dropdown attr_bar_item add_col_dropdown">
+        <span class="btn btn-success" id="dropdownMenu2" data-toggle="dropdown">
+            <span class="glyphicon glyphicon-plus"></span>添加分类专栏
+        </span>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2" style="width: 380px">
+            <div class="column-list">
+            </div>
+            <div class="row">
+                <div style="position: relative;left:175px">
+                    <span class="btn btn-info close-col-btn">关闭</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="attr_bar_item">
+        <label>
+            <input type="radio" name="is_original" value=1 checked="checked"/>
+            原创
+        </label>
+        <label>
+            <input type="radio" value=0 name="is_original"/>
+            转载
+        </label>
+    </div>
+</div>
+<div id="editor">
+</div>
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="/static/bootstrap/js/jquery-1.12.4.min.js"></script>
+<script src="/static/js/default.js"></script>
+<script src="/static/js/jquery.cookie.min.js"></script>
+<script src="/static/editor-md/editormd.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/js/editor.js"></script>
+<script>
+    $(function (message) {
+        // 绑定按钮
+        // 关闭分栏
+        $('.close-col-btn').click(close_col_btn);
+        // 保存标签
+        $('.save-mark-btn').click(save_mark_btn);
+        // 搜索标签
+        $('#search-mark-btn').click(function () {
+            search_mark($('#input-mark').val());
+        });
+        // 新建标签
+        $('#create-mark-btn').click(function () {
+            create_mark_checkbox($.cookie('id'), $('#input-mark').val());
+        });
+        // 下拉菜单点击后不关闭
+        $('body').on('click', '.dropdown-menu', function (e) {
+            e.stopPropagation();
+        });
+        //如果token正确
+        if (verify()) {
+            let editor;
+            // 获取头像
+            $('.avatar').attr('src', '/getAvatar?id=' + $.cookie('id'));
+            // 显示头像
+            $('.avatar').show();
+            // 获取分类专栏
+            get_user_col_checkbox();
+
+            let blog_id = $.get_url_param('blog_id');
+            if (blog_id != null) {
+                // 保存博客按钮
+                let btn = $('.btn-publish');
+                btn.text('保存文章');
+                btn.click(function () {
+                    const title = $('.title-input').val(), is_original = $('[name=is_original]:checked').val();
+                    const pre_text = $('.editormd-preview-container').text().substring(0, 200);
+                    const md_code = editor.getMarkdown();
+                    const marks_id = [], cols_id = [];
+                    for (let i = 0, blog_marks = $('.blog_mark'); i < blog_marks.length; i++) {
+                        marks_id.push($(blog_marks[i]).attr('mark_id'));
+                    }
+                    for (let i = 0, cols = $('[name=col_checkbox]:checked'); i < cols.length; i++) {
+                        cols_id.push($(cols[i]).val());
+                    }
+                    save_blog(blog_id, title, pre_text, md_code, is_original, marks_id, cols_id);
+                });
+                // 加载博客信息（博客标签、分栏、博客标题、MD源码）
+                $.get('/getBlogMark', {blog_id: blog_id}, function (res) {
+                    let marks = res['data']['marks'];
+                    $.push_front_controller($('.attr_bar'), make_blog_mark, marks);
+                    $('.blog_mark').click(function () {
+                        $(this).remove();
+                    });
+                });
+                $.get('/getBlogCol', {blog_id: blog_id}, function (res) {
+                    let columns = res['data']['columns'];
+                    for (let i = 0; i < columns.length; i++) {
+                        $(`[name=col_checkbox][value=${columns[i]['col_id']}]`).attr('checked', true);
+                    }
+                });
+                $.get('/getBlogTitle', {blog_id: blog_id}, function (res) {
+                    let title = res['data']['title'];
+                    $('.title-input').val(title);
+                });
+                $.get('/getBlogIsOriginal', {blog_id: blog_id}, function (res) {
+                    $(`[name=is_original][value=${res['data']['is_original']}]`).attr('checked', true);
+                });
+                $.get('/getBlogMD', {blog_id: blog_id}, function (res) {
+                    editor = editormd("editor", {
+                        width: "90%",
+                        height: 640,
+                        path: "../editor-md/lib/",
+                        imageUpload: true,
+                        appendMarkdown: res['data']['md_code'],
+                        imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+                        imageUploadURL: "/uploadBlogImage"
+                    });
+
+                });
+            } else {
+                // 发布博客按钮
+                $('.btn-publish').click(function () {
+                    const title = $('.title-input').val(), is_original = $('[name=is_original]:checked').val();
+                    const pre_text = $('.editormd-preview-container').text().substring(0, 200);
+                    const md_code = editor.getMarkdown();
+                    const marks_id = [], cols_id = [];
+                    for (let i = 0, blog_marks = $('.blog_mark'); i < blog_marks.length; i++) {
+                        marks_id.push($(blog_marks[i]).attr('mark_id'));
+                    }
+                    for (let i = 0, cols = $('[name=col_checkbox]:checked'); i < cols.length; i++) {
+                        cols_id.push($(cols[i]).val());
+                    }
+                    publish_blog(title, pre_text, md_code, is_original, marks_id, cols_id);
+                });
+                editor = editormd("editor", {
+                    width: "90%",
+                    height: 640,
+                    path: "../editor-md/lib/",
+                    imageUpload: true,
+                    imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+                    imageUploadURL: "/uploadBlogImage"
+                });
+            }
+        }
+    });
+</script>
+</body>
+</html>

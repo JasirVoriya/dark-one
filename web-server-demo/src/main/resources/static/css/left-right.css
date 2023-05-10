@@ -1,0 +1,37 @@
+li {
+    list-style: none;
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.container-left {
+    padding: 10px;
+    background: rgba(255, 255, 255, 1);
+    position: relative;
+    right: 2px;
+    border-radius: 5px;
+}
+
+.container-left ul {
+    padding: 8px 0;
+    font-weight: 400;
+    color: #555666;
+    border-radius: 0 0 4px 4px;
+}
+
+.container-left ul li a {
+    text-decoration: none; /*清除下划线  */
+    cursor: pointer;
+    color: #999aaa;
+    display: inline-block;
+    position: relative;
+    margin-right: 8px;
+    vertical-align: middle;
+    top: -1px;
+    left: 16px;
+}
+
+.container-right {
+    background: rgba(0, 0, 0, 0);
+    left: 2px;
+}

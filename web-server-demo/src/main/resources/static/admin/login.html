@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>管理员登录</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-dialog/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" href="../css/default.css">
+    <style>
+        .app {
+            background: rgb(33, 36, 41);
+            width: 100%;
+            height: 100%;
+        }
+
+        .login-box {
+            background: rgb(23, 25, 28);
+            padding: 110px 0px 110px 0px;
+            width: 730px;
+            margin: 0 auto;
+            position: relative;
+            top: 5%;
+        }
+
+        .login-form {
+
+        }
+
+        .title {
+            text-align: center;
+            padding: 60px 0px 0px 0px;
+        }
+
+        .title-text {
+            color: rgb(58, 154, 237);
+            font-weight: 900;
+            font-size: 70px;
+        }
+
+        .form-item {
+            margin: 20px 40px 40px 20px;
+        }
+
+        .input-label {
+            color: rgb(119, 185, 238);
+            font-weight: 800;
+            font-family: emoji;
+        }
+
+        .input {
+            color: rgb(58, 154, 237);
+            font-family: inherit;
+            border-radius: 50px;
+            font-weight: 1000;
+        }
+
+        .login-button {
+            background: rgb(33, 36, 41);
+            border: 1px;
+        }
+    </style>
+</head>
+<body style="background:rgba(0,0,0,0);">
+<div class="app">
+    <div class="title">
+        <p class="title-text">ADMINISTRATOR LOGIN</p>
+    </div>
+    <div class="login-box">
+        <form class="form-horizontal login-form">
+            <!--账号-->
+            <div class="form-item" id="account-item">
+                <label for="account" class="col-xs-3 col-md-4 control-label input-label">Account</label>
+                <div class="col-xs-8 col-md-5">
+                    <input type="account" name="account" class="form-control input" id="account" placeholder="Account">
+                </div>
+                <label class="control-label" id="account-info"></label>
+            </div>
+            <!--密码-->
+            <div class="form-item" id="psw-item">
+                <label for="psw" class="col-xs-3 col-md-4 control-label input-label">Password</label>
+                <div class="col-xs-8 col-md-5">
+                    <input type="password" name="psw" class="form-control input" id="psw" placeholder="Password">
+                </div>
+                <label class="control-label" id="psw-info"></label>
+            </div>
+            <!--登录-->
+            <div style="text-align: center">
+                <button type="button" class="btn btn-info login-button">LOG IN</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="../bootstrap/js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery.cookie.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../bootstrap-dialog/js/bootstrap-dialog.min.js"></script>
+<script src="../js/default.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.login-button').click(function () {
+            let account = $('#account').val();
+            let psw = $('#psw').val();
+            $.post('/administratorLogin', {'account': account, 'psw': psw}, function (res) {
+                if (res['success']) {
+                    window.location.href='/admin';
+                } else {
+                    $.showErr(res['message']);
+                }
+            })
+        });
+    })
+</script>
+</body>
+</html>

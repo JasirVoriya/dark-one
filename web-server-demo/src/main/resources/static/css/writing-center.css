@@ -1,0 +1,348 @@
+li, ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 5px;
+    right: 10px
+}
+
+.console_home_box_main {
+    padding-right: 12px;
+    width: 76%;
+}
+
+.console_col_box_main {
+    padding-right: 12px;
+    /*width: 40%;*/
+}
+
+.console_home_data_list {
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    padding: 24px;
+    background: #fff;
+    margin-bottom: 24px;
+    z-index: 11;
+}
+
+.console_home_total_data a {
+    text-decoration: none;
+    display: block;
+}
+
+.console_home_total_data {
+    width: 180px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.console_home_total_data .title {
+    height: 20px;
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #555666;
+    line-height: 20px;
+    margin-top: 16px;
+}
+
+.console_home_total_data .today_data {
+    height: 35px;
+    font-size: 24px;
+    font-family: PingFangSC-Semibold, PingFang SC;
+    font-weight: 600;
+    color: #222226;
+    line-height: 35px;
+    margin: 12px 0;
+}
+
+.console_home_total_data .today_data:hover {
+    color: rgb(251, 114, 153);
+}
+
+.console_home_total_data .yesterday_data {
+    padding: 0 12px;
+    height: 24px;
+    background: #f0f0f5;
+    border-radius: 12px;
+    font-size: 12px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #555666;
+    line-height: 24px;
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
+.console_home_block_box {
+    background: #fff;
+    padding: 24px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+}
+
+.head-title {
+    border-right: 1px solid #e6e6e6;
+    list-style: none;
+    position: relative;
+    margin: 0;
+    padding-left: 0;
+    background-color: #fff;
+    border: none;
+    border-right: none;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.more_click {
+    width: 56px;
+    height: 26px;
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #6b6b6b;
+    line-height: 26px;
+    cursor: pointer;
+}
+
+.fr {
+    float: right;
+}
+
+.title-text {
+    height: 26px;
+    line-height: 26px;
+    color: #00a1d6;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    cursor: default;
+
+    background-color: #fff !important;
+    border-bottom-color: transparent;
+}
+
+.console-home-body-list {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    color: #2c3e50;
+    -webkit-box-direction: normal;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.consoleHome-ul {
+    width: 100%;
+    height: 100%;
+    margin-top: 24px;
+}
+
+.consoleContent-ul {
+    width: 100%;
+    height: 100%;
+    margin-top: 24px;
+}
+
+.consoleColumn-ul {
+    width: 100%;
+    height: 100%;
+    margin-top: 24px;
+}
+
+.consoleColBlog-ul {
+    width: 100%;
+    height: 100%;
+    margin-top: 24px;
+}
+
+.consoleHome-listData {
+    padding: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+}
+
+.consoleCol-listData {
+    padding: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+}
+
+.consoleCol-listData:hover {
+    background: #cccccc;
+}
+
+.col-title {
+    cursor: pointer;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.col-title:hover {
+    color: rgb(251, 114, 153);
+}
+
+.consoleHome-listData:hover {
+    background: #cccccc;
+}
+
+.consoleHome-listData-left {
+    display: flex;
+    flex-direction: row;
+    max-width: 680px;
+    width: 100%;
+    overflow: hidden;
+    align-items: baseline;
+    margin-right: 20px;
+}
+
+.consoleHome-listData-mark {
+    padding: 0 2px;
+    white-space: nowrap;
+    max-width: 34px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 12px;
+    background: #fff;
+    border-radius: 2px;
+    color: #00a1d6;
+    border: 1px solid #00a1d6;
+    margin-right: 16px;
+}
+
+.consoleHome-listData-desc {
+    width: 100%;
+    max-width: 700px;
+    min-width: 200px;
+    overflow: hidden;
+}
+
+.consoleHome-listData-desc p {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.consoleHome-listData-desc p:first-child {
+    font-size: 16px;
+    color: #222227;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+.consoleHome-listData-desc p:last-child {
+    font-size: 14px;
+    color: #555666;
+    margin-top: 8px;
+    line-height: 22px;
+}
+
+.consoleHome-listData-num {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 200px;
+}
+
+.consoleHome-listData-num li p:first-child {
+    font-size: 18px;
+    font-weight: 600;
+    color: #474747;
+    line-height: 25px;
+}
+
+.consoleHome-listData-num li p:last-child {
+    font-size: 14px;
+    margin-top: 8px;
+    color: #555666;
+    line-height: 22px;
+}
+
+.consoleHome-listData-num li .listNum {
+    cursor: pointer;
+}
+
+.consoleHome-listData-num li p {
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.head-title a, .consoleHome-listData-desc a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.edit-icon {
+    cursor: pointer;
+    top: 16px;
+    right: 16px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #1989fa;
+    font-size: 14px;
+    min-width: 50px;
+}
+
+.del-icon {
+    cursor: pointer;
+    top: 16px;
+    right: 16px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #ff291e;
+    font-size: 14px;
+    min-width: 50px;
+}
+
+.col-edit-btn {
+    cursor: pointer;
+    top: 16px;
+    right: 16px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #1989fa;
+    font-size: 14px;
+    min-width: 50px;
+}
+
+.col-delete-btn {
+    cursor: pointer;
+    top: 16px;
+    right: 16px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #ff291e;
+    font-size: 14px;
+    min-width: 50px;
+}

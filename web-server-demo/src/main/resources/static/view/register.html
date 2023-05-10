@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>注册</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="../vivify/vivify.min.css">
+</head>
+<body style="background:rgba(0,0,0,0);">
+<div class="container center vivify popIn"
+     style="background-color: #FFFFFF; width: 500px;height: 500px;top: 15%;border-radius: 10px;box-shadow: 0 3px 26px rgb(0 0 0 / 90%);">
+    <!-- Nav tabs -->
+    <hr>
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#register" aria-controls="register" role="tab"
+                                                  data-toggle="tab">注册</a></li>
+        <li role="presentation"><a href="#login" aria-controls="login" role="tab" data-toggle="tab">登录</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <br>
+        <!-- 注册表单 -->
+        <div role="tabpanel" class="tab-pane active" id="register">
+            <form class="form-horizontal center" id="register-form">
+                <!--邮箱-->
+                <div class="form-group" id="register-email-item">
+                    <label for="register-email" class="col-xs-3 col-md-4 control-label">邮箱</label>
+                    <div class="col-xs-8 col-md-5">
+                        <input type="email" name="register-email" class="form-control" id="register-email"
+                               placeholder="Email">
+                    </div>
+                    <label class="control-label" id="register-email-info"></label>
+                </div>
+                <!--邮箱验证码-->
+                <div class="form-group" id="register-email-code-item">
+                    <label for="register-email-code" class="col-xs-3 col-md-4 control-label">邮箱验证码</label>
+                    <div class="col-xs-8 col-md-5">
+                        <input type="code" name="register-email-code" class="form-control" id="register-email-code"
+                               placeholder="Code">
+                    </div>
+                    <label class="control-label" id="register-email-code-info"></label>
+                </div>
+                <!--密码-->
+                <div class="form-group" id="register-psw1-item">
+                    <label for="register-psw1" class="col-xs-3 col-md-4 control-label">密码</label>
+                    <div class="col-xs-8 col-md-5">
+                        <input type="password" name="register-psw1" class="form-control" id="register-psw1"
+                               placeholder="Password">
+                    </div>
+                    <label class="control-label" id="register-psw1-info"></label>
+                </div>
+                <!--确认密码-->
+                <div class="form-group" id="register-psw2-item">
+                    <label for="register-psw2" class="col-xs-3 col-md-4 control-label">确认密码</label>
+                    <div class="col-xs-8 col-md-5">
+                        <input type="password" class="form-control" id="register-psw2" placeholder="Password">
+                    </div>
+                    <label class="control-label" id="register-psw2-info"></label>
+                </div>
+                <!--图片验证码-->
+                <div class="form-group" id="register-image-code-item">
+                    <label for="register-image-code" class="col-xs-3 col-md-4 control-label">验证码</label>
+                    <div class="col-xs-4 col-md-3">
+                        <input type="code" class="form-control" id="register-image-code" placeholder="Code">
+                    </div>
+                    <img src="/getImageCode" class="img-responsive col-xs-4 col-md-3" alt="Responsive image"
+                         id="register-image-code-image" style="width: 110px;cursor: pointer;">
+                    <label class="control-label" id="register-image-code-info"></label>
+                </div>
+                <!--注册-->
+                <div class="form-group">
+                    <button type="button" class="btn btn-success" style="position: relative;left:38%;"
+                            id="get-email-code-button">获取邮箱验证码
+                    </button>
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-success" style="position: relative;left:45%;"
+                            id="register-button">注册
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!-- 登录表单 -->
+        <div role="tabpanel" class="tab-pane" id="login">
+            <form class="form-horizontal center" id="login-form">
+                <!--邮箱-->
+                <div class="form-group" id="login-email-item">
+                    <label for="login-email" class="col-xs-3 col-md-4 control-label">邮箱</label>
+                    <div class="col-xs-8 col-md-5">
+                        <input type="email" name="login-email" class="form-control" id="login-email"
+                               placeholder="Email">
+                    </div>
+                    <label class="control-label" id="login-email-info"></label>
+                </div>
+                <!--密码-->
+                <div class="form-group" id="login-psw-item">
+                    <label for="login-psw" class="col-xs-3 col-md-4 control-label">密码</label>
+                    <div class="col-xs-8 col-md-5">
+                        <input type="password" name="login-psw" class="form-control" id="login-psw"
+                               placeholder="Password">
+                    </div>
+                    <label class="control-label" id="login-psw-info"></label>
+                </div>
+                <!--登录-->
+                <div class="form-group">
+                    <button type="button" class="btn btn-success" style="position: relative;left:45%;"
+                            id="login-button">登录
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <a href="forget-psw.html" target="_blank" style="position: absolute;bottom: 25px;left: 40px;">忘记密码</a>
+</div>
+
+<!-- 弹窗 -->
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">提示</h4>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="../bootstrap/js/jquery-1.12.4.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../js/default.js"></script>
+<script type="text/javascript">
+    //正则表达式
+    const email_reg = /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/;
+    const psw_reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$/;
+
+    //显示弹窗
+    function modal(info) {
+        $('#modal .modal-body').text(info);
+        $('#modal').modal('show');
+    }
+
+    // 更改表单输入框样式，ressult如果为true，显示成功状态，false显示错误状态，并显示错误信息
+    function change_input_style(name, error_info, result) {
+        if (!result) {
+            $("#" + name + "-info").html(error_info);
+            $("#" + name + "-item").attr({
+                "class": "form-group has-error"
+            });
+        } else {
+            $("#" + name + "-info").html("√");
+            $("#" + name + "-item").attr({
+                "class": "form-group has-success"
+            });
+        }
+        return result;
+    }
+
+    // 绑定事件
+    $(function () {
+        // 点击图片刷新验证码验证码
+        $("#register-image-code-image").click(function () {
+            this.src = "/getImageCode?time=" + new Date();
+        });
+
+        // 获取邮箱验证码
+        $("#get-email-code-button").click(function () {
+            const email = $("#register-email").val();
+            //检查邮箱格式
+            if (!change_input_style('register-email', '邮箱格式错误', email_reg.test(email))) return;
+            // 发送请求
+            $.get("/getRegisterEmailCode", {
+                "email": email
+            }, function () {
+                //禁用按钮
+                disabledButton('get-email-code-button', $('#get-email-code-button').text(), 60);
+                // 显示弹窗
+                modal('验证码发送成功');
+
+            });
+        });
+        // 发起注册请求
+        $('#register-button').click(function () {
+            let result = true;
+            const email = $("#register-email").val();
+            const email_code = $("#register-email-code").val();
+            const psw1 = $("#register-psw1").val();
+            const psw2 = $("#register-psw2").val();
+            const image_code = $('#register-image-code').val();
+            //检查邮箱格式
+            result = result ? change_input_style('register-email', '邮箱格式错误', email_reg.test(email)) : false;
+            //检查密码强度
+            result = result ? change_input_style('register-psw1', '密码强度太弱', psw_reg.test(psw1)) : false;
+            //判断两次密码是否一样
+            result = result ? change_input_style('register-psw2', '密码不一致', psw1 == psw2) : false;
+            // 如果检测通过
+            if (result) {
+                // 发起注册请求
+                $.post('/register', {
+                        'email': email,
+                        'psw': psw1,
+                        'email_code': email_code,
+                        'image_code': image_code
+                    },
+                    function (res) {
+                        if (!res['success']) {
+                            // 注册失败
+                            modal(res['message']);
+                            if (res['data']) {
+                                //判断图片验证码
+                                change_input_style('register-image-code', '验证码错误', res['image_result']);
+                                //判断邮箱验证码
+                                change_input_style('register-email-code', '验证码错误', res['email_result']);
+                            }
+                            return;
+                        }
+                        modal('注册成功');
+                    });
+            }
+        });
+        // 发起登录请求
+        $('#login-button').click(function () {
+            const email = $("#login-email").val();
+            const psw = $('#login-psw').val();
+            // alert(email + ":" + psw);
+            $.post('/login', {
+                    'email': email,
+                    'psw': psw
+                },
+                function (res) {
+                    if (res['success']) {
+                        //子窗口刷新父窗口
+                        parent.location.reload();
+                    } else {
+                        modal('登陆失败，请检查邮箱或密码是否正确');
+                    }
+                });
+        });
+    });
+</script>
+</body>
+</html>

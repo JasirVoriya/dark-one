@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>个人中心</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-dialog/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../vivify/vivify.min.css">
+    <link rel="stylesheet" href="../css/left-right.css">
+    <link rel="stylesheet" href="../css/user-center-information.css">
+    <link rel="stylesheet" href="../css/user-center-my-fans-list.css">
+    <link rel="stylesheet" href="../css/user-center-my-following-list.css">
+    <link rel="stylesheet" href="../css/user-center-my-avatar.css">
+    <link rel="stylesheet" href="../css/blog-list-item.css">
+    <style type="text/css">
+        .collection-box {
+            border-radius: 5px;
+            background: #fff;
+            padding: 15px;
+        }
+
+        .head-title {
+            border-right: 1px solid #e6e6e6;
+            list-style: none;
+            position: relative;
+            margin: 0;
+            padding-left: 0;
+            background-color: #fff;
+            border-right: none;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .title-text {
+            height: 26px;
+            line-height: 26px;
+            color: #00a1d6;
+            font-weight: bold;
+            font-size: 16px;
+            border: none;
+            cursor: default;
+
+            background-color: #fff !important;
+            border-bottom-color: transparent;
+        }
+    </style>
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+
+    <![endif]-->
+</head>
+<body style="background:rgba(0,0,0,0);">
+<div class="container-fluid" id="app">
+    <div class="row">
+        <div class="col-md-2 col-lg-2 col-sm-2"></div>
+        <div class="col-md-1 col-lg-1 col-sm-1 container-left">
+            <div>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation"><a href="#information" role="tab" data-toggle="tab">个人资料</a></li>
+                    <li role="presentation"><a href="#my-fans-list" role="tab" data-toggle="tab">我的粉丝</a></li>
+                    <li role="presentation"><a href="#my-following" role="tab" data-toggle="tab">我的关注</a></li>
+                    <li role="presentation"><a href="#my-avatar" role="tab" data-toggle="tab">我的头像</a></li>
+                    <li role="presentation"><a href="#account-setting" role="tab" data-toggle="tab">修改密码</a></li>
+                    <li role="presentation"><a href="#my-collection" role="tab" data-toggle="tab">我的收藏</a></li>
+                    <li role="presentation"><a href="writing-center.html?index=1" target="_blank" role="tab">内容管理</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-7 col-lg-7 col-sm-7 container-right">
+            <!-- Tab panes -->
+            <div class="tab-content" style="min-width: 820px;">
+                <div role="tabpanel" class="tab-pane" id="information">
+                    <div class="general-info pb-8 vivify pullUp">
+                        <div class="general-info-t">
+                            <!--                                头像部分-->
+                            <div class="general-info-avatar">
+                                <img>
+                            </div>
+                            <!--                                信息部分-->
+                            <div class="general-info-t-info">
+                                <div class="profile-name-info">
+                                    <div class="person-name nickname">NICKNAME</div>
+                                    <span class="person-code-age">码龄0年</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="base-info" class="base-info">
+                        <!--                        <div class="base-info-head">基本信息</div>-->
+                        <div class="security-right-title">
+                            <span class="security-right-title-icon"></span>
+                            <span class="security-right-title-text">我的信息</span> <!---->
+                        </div>
+                        <div class="base-info-content">
+                            <div class="base-info-content-show vivify fadeIn">
+                                <ul>
+                                    <li>
+                                        <div class="content-show-l">用户昵称</div>
+                                        <div class="content-show-r nickname">-</div>
+                                    </li>
+                                    <li>
+                                        <div class="content-show-l">用户邮箱</div>
+                                        <div class="content-show-r email">-</div>
+                                    </li>
+                                    <li>
+                                        <div class="content-show-l">真实姓名</div>
+                                        <div class="content-show-r real-name">-</div>
+                                    </li>
+                                    <li>
+                                        <div class="content-show-l"><span>性</span><span>别</span></div>
+                                        <div class="content-show-r sex">-</div>
+                                    </li>
+                                    <li>
+                                        <div class="content-show-l">个人简介</div>
+                                        <div class="content-show-r self-introduction">-</div>
+                                    </li>
+                                    <li>
+                                        <div class="content-show-l">所在地区</div>
+                                        <div class="content-show-r city">-</div>
+                                    </li>
+                                    <li>
+                                        <div class="content-show-l">出生日期</div>
+                                        <div class="content-show-r birthday">-</div>
+                                    </li>
+                                    <li>
+                                        <div class="content-show-l">开始工作</div>
+                                        <div class="content-show-r">-</div>
+                                    </li>
+                                </ul>
+                                <div class="edit-icon">
+                                    <i></i><span class="glyphicon glyphicon-edit"></span><span></span>编辑
+                                </div>
+                            </div>
+                            <div class="base-info-content-edit vivify fadeIn" style="display: none">
+                                <form class="el-form">
+                                    <div class="form-item">
+                                        <label class="form-item__label">用户昵称:</label>
+                                        <div class="form-item__content">
+                                            <div class="el-input">
+                                                <input autocomplete="off" placeholder="你的昵称" type="text"
+                                                       name="nickname"
+                                                       maxlength="16" class="input__inner">
+                                            </div>
+                                            <span class="notice">思：混迹江湖数载，需有江湖绰号</span><!---->
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <label class="form-item__label">用户邮箱:</label>
+                                        <div class="form-item__content">
+                                            <span class="userinfo-descript email">-</span>
+                                            <!---->
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <label class="form-item__label">真实姓名:</label>
+                                        <div class="form-item__content">
+                                            <div class="el-input">
+                                                <input autocomplete="off" placeholder="你的名字" type="text"
+                                                       name="real-name"
+                                                       maxlength="16" class="input__inner">
+                                            </div>
+                                            <span class="notice">思：杏花应声吾姓桃，桃花答曰我姓李</span><!---->
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <label class="form-item__label">性别:</label>
+                                        <div class="form-item__content">
+                                            <div class="radio-group">
+                                                <label class="radio-button">
+                                                    <input type="radio" class="radio-button__orig-radio"
+                                                           name="sex"
+                                                           value=1>
+                                                    <span class="radio-button__inner">男</span>
+                                                </label>
+                                                <label class="radio-button">
+                                                    <input type="radio" class="radio-button__orig-radio"
+                                                           name="sex"
+                                                           value=2>
+                                                    <span class="radio-button__inner">女</span>
+                                                </label>
+                                                <label class="radio-button">
+                                                    <input type="radio" class="radio-button__orig-radio"
+                                                           name="sex"
+                                                           value=0>
+                                                    <span class="radio-button__inner">保密</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <label class="form-item__label">个人简介:</label>
+                                        <div class="form-item__content">
+                                            <div>
+                                                <textarea placeholder="设置您的签名" rows="2"
+                                                          name="self-introduction"
+                                                          autocomplete="off" validateevent="true"
+                                                          class="el-textarea__inner"></textarea>
+                                            </div><!---->
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <label class="form-item__label">所在地区:</label>
+                                        <div class="form-item__content">
+                                            <div class="el-input">
+                                                <input autocomplete="off" placeholder="所在地区" type="text"
+                                                       name="city"
+                                                       maxlength="16" class="input__inner">
+                                            </div>
+                                            <span class="notice">思：今夜明月人尽望，不知秋思落谁家</span><!---->
+                                        </div>
+                                    </div>
+                                    <div class="form-item">
+                                        <label class="form-item__label">出生日期:</label>
+                                        <div class="form-item__content">
+                                            <div class="date-editor el-input" style="cursor: pointer"><!---->
+                                                <!--                                                <i class="el-input__icon fa fa-calendar"></i>-->
+                                                <input autocomplete="off" placeholder="选择日期" readonly="readonly"
+                                                       name="birthday"
+                                                       type="text" class="input__inner">
+                                                <i class="input__icon fa fa-calendar fa-2x"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-item user-my-btn pb-8"><!---->
+                                        <div class="form-item__content">
+                                            <div class="padding-dom"></div>
+                                            <div class="user-my-btn-warp">
+                                                <button type="button" class="el-button save-button">
+                                                    <span>保存</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="date-picker vivify pullDown pullUp"
+                                     style="display: none">
+                                    <div class="picker__body-wrapper">
+                                        <div class="picker__body">
+                                            <div class="picker__header">
+                                                <button type="button" id="left-year"
+                                                        class="picker__icon-btn picker__prev-btn long glyphicon glyphicon-menu-left"></button>
+                                                <button type="button" id="left-month"
+                                                        class="picker__icon-btn picker__prev-btn long glyphicon glyphicon-triangle-left"></button>
+                                                <span class="picker__header-label"></span>
+                                                <span class="picker__header-label"></span>
+                                                <button type="button" id="right-year"
+                                                        class="picker__icon-btn picker__next-btn long glyphicon glyphicon-menu-right"></button>
+                                                <button type="button" id="right-month"
+                                                        class="picker__icon-btn picker__next-btn long glyphicon glyphicon-triangle-right"></button>
+                                            </div>
+                                            <div class="picker__content">
+                                                <table cellspacing="0" cellpadding="0" class="date-table">
+                                                    <tbody>
+                                                    <tr><!---->
+                                                        <th>日</th>
+                                                        <th>一</th>
+                                                        <th>二</th>
+                                                        <th>三</th>
+                                                        <th>四</th>
+                                                        <th>五</th>
+                                                        <th>六</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dialog-wrap-box vivify popIn" style="display: none">
+                                    <div class="dialog-contnent">
+                                        <div class="dialog-title">
+                                            <span class="dialog-title-txt">提示</span>
+                                            <span class="dialog-title-icon"></span>
+                                        </div>
+                                        <div class="dialog-content">
+                                            <div class="dialog-success-content">
+                                                <div class="dialog-success-img"></div>
+                                                <p class="dialog-success-explain">已经成功更新你的资料</p>
+                                                <div class="dialog-btn-warp">
+                                                    <div class="dialog-btn">确定</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="my-fans-list">
+                    <div class="fans_list">
+                        <div class="my-fans-list-title">
+                            <span class="my-fans-list-title-icon"></span>
+                            <span class="my-fans-list-title-text">我的粉丝</span> <!---->
+                        </div>
+                    </div>
+                </div>
+
+                <div role="tabpanel" class="tab-pane" id="my-following">
+                    <div class="following_list">
+                        <div class="my-following-list-title">
+                            <span class="my-following-list-title-icon"></span>
+                            <span class="my-following-list-title-text">我的关注</span> <!---->
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="my-avatar">
+                    <div class="avatar-box">
+                        <div class="avatar-item">
+                            <img class="my-avatar">
+                        </div>
+                        <div class="btn-item">
+                            <input id="photoFile" type="file" accept="image/*" class="file-dialog"
+                                   style="display:inline"/>
+                            <button id="upload" class="btn btn-info">上传</button>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="account-setting">
+                    <div style="background: #fff;padding: 60px;">
+                        <!-- 注册表单 -->
+                        <div role="tabpanel" class="tab-pane active" id="change-password">
+                            <form class="form-horizontal center" id="change-password-form">
+                                <!--邮箱-->
+                                <div class="form-group" id="email-item">
+                                    <label for="email" class="col-xs-3 col-md-4 control-label">邮箱</label>
+                                    <div class="col-xs-8 col-md-5">
+                                        <input type="email" name="email" class="form-control" id="email"
+                                               placeholder="Email" readonly=true>
+                                    </div>
+                                    <label class="control-label" id="email-info"></label>
+                                </div>
+                                <!--旧密码-->
+                                <div class="form-group" id="old-psw-item">
+                                    <label for="old-psw" class="col-xs-3 col-md-4 control-label">旧密码</label>
+                                    <div class="col-xs-8 col-md-5">
+                                        <input type="password" name="old-psw" class="form-control" id="old-psw"
+                                               placeholder="Password">
+                                    </div>
+                                    <label class="control-label" id="old-psw-info"></label>
+                                </div>
+                                <!--密码-->
+                                <div class="form-group" id="psw1-item">
+                                    <label for="psw1" class="col-xs-3 col-md-4 control-label">新密码</label>
+                                    <div class="col-xs-8 col-md-5">
+                                        <input type="password" name="psw1" class="form-control" id="psw1"
+                                               placeholder="Password">
+                                    </div>
+                                    <label class="control-label" id="psw1-info"></label>
+                                </div>
+                                <!--确认密码-->
+                                <div class="form-group" id="psw2-item">
+                                    <label for="psw2" class="col-xs-3 col-md-4 control-label">确认密码</label>
+                                    <div class="col-xs-8 col-md-5">
+                                        <input type="password" class="form-control" id="psw2" placeholder="Password">
+                                    </div>
+                                    <label class="control-label" id="psw2-info"></label>
+                                </div>
+                                <!--图片验证码-->
+                                <div class="form-group" id="image-code-item">
+                                    <label for="image-code" class="col-xs-3 col-md-4 control-label">验证码</label>
+                                    <div class="col-xs-4 col-md-3">
+                                        <input type="text" class="form-control" id="image-code" placeholder="Code">
+                                    </div>
+                                    <img src="/getImageCode" class="img-responsive col-xs-4 col-md-3"
+                                         style="width: 110px;cursor: pointer" alt="Responsive image"
+                                         id="image-code-image">
+                                    <label class="control-label" id="image-code-info"></label>
+                                </div>
+                                <!--修改密码-->
+                                <div class="form-group" style="text-align: center;">
+                                    <button type="button" class="btn btn-success" id="change-password-button">修改密码
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="my-collection">
+                    <div class="collection-box">
+                        <div role="menubar" class="head-title">
+                            <span class="title-text">收藏列表</span>
+                        </div>
+                        <div class="collection-list">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 col-lg-2 col-sm-2"></div>
+    </div>
+</div>
+
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src=" ../bootstrap/js/jquery-1.12.4.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../bootstrap-dialog/js/bootstrap-dialog.min.js"></script>
+<script src="../js/user-center-information.js"></script>
+<script src="../js/default.js"></script>
+<script src="../js/jquery.cookie.min.js"></script>
+<script src="../js/user-center-my-avatar.js"></script>
+<script type="text/javascript">
+    //正则表达式
+    const psw_reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$/;
+
+    // 解析地址栏的参数，激活对应的导航栏
+    function action_tab(index) {
+        $('.container-left li')[index].className = "active";
+        $('.tab-pane')[index].className += " active";
+    }
+
+    // 生成粉丝列表条目
+    function make_fans_list_item(data) {
+        let btn_class = [['fans-btn', '关注'], ['mutual-following-btn', '已互粉']];
+        return `
+             <div class="fans_list_item vivify pullDown">
+                <div class="fans_list_item_content">
+                    <div class="fans_list_item_left">
+                        <img src='/getAvatar?id=${data['fans_id']}' alt="" class="fans_avatar">
+                        <div class="fans_content">
+                            <div class="fans_title">
+                                <a href="/static/view/user-space.html?id=${data['fans_id']}" target="_blank">
+                                    <div class="fans-name">${data['nickname']}</div>
+                                </a>
+                            </div>
+                            <div class="desc">
+                            ${data['self_introduction']}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fans_list_item_right">
+                        <div class=${btn_class[data['is_friend']][0]} user_id=${data['fans_id']}>
+                            ${btn_class[data['is_friend']][1]}
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+    }
+
+    // 生成关注列表条目
+    function make_following_list_item(data) {
+        let btn_class = ['following-btn'];
+        return `
+             <div class="following_list_item vivify pullDown">
+                <div class="following_list_item_content">
+                    <div class="following_list_item_left">
+                        <img src='/getAvatar?id=${data['following_id']}' alt="" class="following_avatar">
+                        <div class="following_content">
+                            <div class="following_title">
+                                <a href="/static/view/user-space.html?id=${data['following_id']}" target="_blank">
+                                    <div class="following-name">${data['nickname']}</div>
+                                </a>
+                            </div>
+                            <div class="desc">
+                                ${data['self_introduction']}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="following_list_item_right">
+                        <div class=${btn_class[0]} user_id=${data['following_id']}>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+    }
+
+    // 控件生成器（博客列表条目）
+    function make_blog_list_item(data) {
+        if (data == null) return null;
+        return `
+        <li class="consoleHome-listData" blog_id=${data['blog_id']}>
+            <div class="consoleHome-listData-left">
+                <span class="consoleHome-listData-mark">博客</span>
+                <div class="consoleHome-listData-desc">
+                    <a href=${data['view_url']} target="_blank">
+                        <p class="title" title=${data['title']}>${data['title']}</p>
+                        <p title=${$.str_code(data['pre_text'])}>${$.str_code(data['pre_text'])}</p>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <ul class="consoleHome-listData-num">
+                    <li>
+                        <p class="listNum">${data['comment_count']}</p>
+                        <p>评论数</p>
+                    </li>
+                    <li><p class="listNum">${data['like_count']}</p>
+                        <p>点赞数</p></li>
+                    <li><p class="listNum">${data['collection_count']}</p>
+                        <p>收藏数</p></li>
+                </ul>
+            </div>
+        </li>
+        `;
+    }
+
+    // 上传头像
+    function upload_avatar() {
+        if ($("#photoFile").val() == '') {
+            $.showErr("请选择文件");
+            return;
+        }
+        let formData = new FormData();
+        formData.append('photo', document.getElementById('photoFile').files[0]);
+        $.ajax({
+            type: 'post',
+            url: "/setAvatar",
+            data: formData,
+            cache: false,
+            processData: false,
+            contentType: false,
+        }).success(function (res) {
+            let data = res['data'];
+            if (res['success']) {
+                $('.my-avatar').attr('src', data['url']);
+                $.showSuccessTimeout('修改成功');
+            } else {
+                $.showErr(res['message']);
+            }
+        }).error(function () {
+            $.showErr('上传失败');
+        });
+    }
+
+    // 更改表单输入框样式，result如果为true，显示成功状态，false显示错误状态，并显示错误信息
+    function change_input_style(name, error_info, result) {
+        if (!result) {
+            $("#" + name + "-info").html(error_info);
+            $("#" + name + "-item").attr({
+                "class": "form-group has-error"
+            });
+        } else {
+            $("#" + name + "-info").html("√");
+            $("#" + name + "-item").attr({
+                "class": "form-group has-success"
+            });
+        }
+        return result;
+    }
+
+    $(function () {
+        // 激活导航栏
+        action_tab($.get_url_param('index'));
+        $('.my-avatar').attr('src', '/getAvatar?id=' + $.cookie('id'));
+        // 获取用户信息
+        $('.general-info-avatar img').attr('src', '/getAvatar?id=' + $.cookie('id'));
+        $.post('/getUserInfo', function (res) {
+            let data = res['data']['data'];
+            if (data != null) {
+                // 加载个人信息展示区资料
+                // 计算码龄
+                let register_time = new Date(data['register_time']);
+                let now = new Date();
+                let code_age = (now.getTime() - register_time.getTime()) / (1000 * 60 * 60 * 24 * 365);
+                $('.person-code-age').text('码龄' + Math.ceil(code_age) + '年');
+                $('.nickname').text(data['nickname']);
+                $('.email').text(data['email']);
+                $('#email').val(data['email']);
+                $('.city').text(data['city']);
+                $('.real-name').text(data['real_name']);
+                let sex = (data['sex']) % 3;
+                $('.sex').text(sex === 0 ? '未知' : sex === 1 ? '男' : '女');
+                $('.self-introduction').text(data['self_introduction']);
+                $('.birthday').text(data['birthday']);
+                // 加载个人信息编辑区的资料
+                $('[name=nickname]').val(data['nickname']);
+                $('[name=real-name]').val(data['real_name']);
+                $('[name=city]').val(data['city']);
+                $(`[name=sex][value=${sex}]`).attr("checked", 'checked');
+                $('[name=self-introduction]').val(data['self_introduction']);
+                $('[name=birthday]').val(data['birthday']);
+            }
+        })
+        // 上传头像按钮
+        $('#upload').click(upload_avatar);
+        // 点击图片刷新验证码验证码
+        $("#image-code-image").click(function () {
+            this.src = "/getImageCode?time=" + new Date();
+        });
+        // 修改密码
+        $('#change-password-button').click(function () {
+            let result = true;
+            const old_psw = $('#old-psw').val();
+            const psw1 = $("#psw1").val();
+            const psw2 = $("#psw2").val();
+            const image_code = $('#image-code').val();
+            //检查密码强度
+            result = result ? change_input_style('psw1', '密码强度太弱', psw_reg.test(psw1)) : false;
+            //判断两次密码是否一样
+            result = result ? change_input_style('psw2', '密码不一致', psw1 == psw2) : false;
+            // 如果检测通过
+            if (result) {
+                // 发起修改密码请求
+                $.post('/changePsw', {
+                        'old_psw': old_psw,
+                        'psw': psw1,
+                        'image_code': image_code
+                    },
+                    function (res) {
+                        let data = res['data']['data'];
+                        if (res['success']) {
+                            //判断图片验证码
+                            if (!data['image_result']) {
+                                change_input_style('image-code', '验证码错误', data['image_result']);
+                                return;
+                            }
+                            $.showSuccessTimeout('修改成功！', function () {
+                                $.removeCookie('token', {path: '/'});
+                                $.removeCookie('id', {path: '/'});
+                                location.reload();
+                            });
+                        } else {
+                            // 修改失败
+                            $.showErr(res['message'], null);
+                        }
+                    }
+                );
+            }
+        });
+        // 加载粉丝列表
+        $.post('/getFansList', function (res) {
+            let data = res['data']['data'];
+            if (data != null) {
+                // 向粉丝列表里面添加粉丝信息
+                $.push_back_controller($('.fans_list'), make_fans_list_item, data);
+                // 为粉丝列表的按钮绑定事件
+                $('.fans_list_item [class$="btn"]').click(function () {
+                    if ($(this).attr('class') == 'fans-btn') {
+                        // 关注
+                        $.post('/follow', {'user_id': $(this).attr('user_id')});
+                        $(this).attr('class', 'mutual-following-btn');
+                        $(this).text('已互粉');
+                    } else {
+                        // 取消关注
+                        $.post('/unfollow', {'user_id': $(this).attr('user_id')});
+                        $(this).attr('class', 'fans-btn');
+                        $(this).text('关注');
+                    }
+                });
+            }
+        });
+        // 加载关注列表
+        $.post('/getFollowingList', function (res) {
+            let data = res['data']['data'];
+            if (data != null) {
+                // 向关注列表里面添加关注信息
+                $.push_back_controller($('.following_list'), make_following_list_item, data);
+                // 为关注列表的按钮绑定事件
+                $('.following_list_item [class$="btn"]').click(function () {
+                    let $this = $(this);
+                    if ($this.hasClass('following-btn')) {
+                        // 取消关注
+                        $.post('/unfollow', {'user_id': $(this).attr('user_id')}, function (res) {
+                            if (res['success']) {
+                                $this.toggleClass('following-btn');
+                                $this.toggleClass('unfollowing-btn');
+                            } else {
+                                $.showErr(res['message'], null);
+                            }
+                        });
+                    } else {
+                        // 关注
+                        $.post('/follow', {'user_id': $(this).attr('user_id')}, function (res) {
+                            if (res['success']) {
+                                $this.toggleClass('following-btn');
+                                $this.toggleClass('unfollowing-btn');
+                            } else {
+                                $.showErr(res['message'], null);
+                            }
+                        });
+                    }
+                });
+            }
+        });
+        // 加载收藏列表
+        $.get('/getCollectionBlogInfo', {page: 1, size: 30}, function (res) {
+            let view_url = res['data']['view_url'];
+            let data = res['data']['data'];
+            if (data != null && data.length > 0) {
+                for (let i = 0; i < data.length; i++) {
+                    data[i]['view_url'] = view_url + '?blog_id=' + data[i]['blog_id'];
+                }
+                $.push_back_controller($('.collection-list'), make_blog_list_item, data);
+            }
+        });
+    });
+</script>
+</body>
+</html>

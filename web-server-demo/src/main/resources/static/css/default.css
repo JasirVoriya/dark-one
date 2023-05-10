@@ -1,0 +1,38 @@
+html,
+body {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none
+}
+
+.default-background {
+    background-image: url(../res/bg2.png);
+    /* 让图片不重覆排列 */
+    background-repeat:no-repeat;
+    /* 固定背景图片位置 */
+    background-attachment:fixed;
+}
+
+.avatar {
+    border-radius: 50%;width: 40px;height: 40px;
+}
+.scrollable {
+    height: 100%;
+    overflow-y: scroll;
+    max-height: 1080px;
+}
+.center {
+    margin: 0 auto;
+    /*水平居中*/
+    position: relative;
+    /*脱离文档流*/
+    top: 30%;
+
+    /*偏移*/
+}

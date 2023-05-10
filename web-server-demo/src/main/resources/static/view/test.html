@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+	<title>博客</title>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../bootstrap-dialog/css/bootstrap-dialog.min.css">
+	<link rel="stylesheet" href="/static/editor-md/css/editormd.css"/>
+	<link rel="stylesheet" href="/static/css/editor.css">
+
+	<!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+	<!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+	<!--[if lt IE 9]>
+	<script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body style="background:rgba(0,0,0,0);">
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">Brand</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+				<li><a href="#">Link</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">One more separated link</a></li>
+					</ul>
+				</li>
+			</ul>
+			<form class="navbar-form navbar-left">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Search">
+				</div>
+				<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#">Link</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Another action</a></li>
+						<li><a href="#">Something else here</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</div><!-- /.container-fluid -->
+</nav>
+<div id="text">
+
+</div>
+<script src="/static/editor-md/examples/js/jquery.min.js"></script>
+<script src="/static/js/default.js"></script>
+<script src="/static/js/jquery.cookie.min.js"></script>
+<script src="/static/editor-md/editormd.min.js"></script>
+<script src="/static/editor-md/lib/marked.min.js"></script>
+<script src="/static/editor-md/lib/prettify.min.js"></script>
+<script src="/static/editor-md/lib/raphael.min.js"></script>
+<script src="/static/editor-md/lib/underscore.min.js"></script>
+<script src="/static/editor-md/lib/sequence-diagram.min.js"></script>
+<script src="/static/editor-md/lib/flowchart.min.js"></script>
+<script src="/static/editor-md/lib/jquery.flowchart.min.js"></script>
+<script type="text/javascript">
+	editormd.markdownToHTML("text", {
+		markdown        : '#11111111111111111111111111' ,//+ "\r\n" + $("#append-test").text(),
+		//htmlDecode      : true,       // 开启 HTML 标签解析，为了安全性，默认不开启
+		htmlDecode      : "style,script,iframe",  // you can filter tags decode
+		//toc             : false,
+		tocm            : true,    // Using [TOCM]
+		//tocContainer    : "#custom-toc-container", // 自定义 ToC 容器层
+		//gfm             : false,
+		//tocDropdown     : true,
+		// markdownSourceCode : true, // 是否保留 Markdown 源码，即是否删除保存源码的 Textarea 标签
+		emoji           : true,
+		taskList        : true,
+		tex             : true,  // 默认不解析
+		flowChart       : true,  // 默认不解析
+		sequenceDiagram : true,  // 默认不解析
+	});
+</script>
+
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="../bootstrap/js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery.cookie.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../bootstrap-dialog/js/bootstrap-dialog.min.js"></script>
+<script src="../js/default.js"></script>
+
+</body>
+</html>

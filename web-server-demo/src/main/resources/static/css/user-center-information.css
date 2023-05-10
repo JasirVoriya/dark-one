@@ -1,0 +1,701 @@
+.pb-8 {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.long {
+    display: inline-block; /*让span变为块状元素，只有块状元素可以缩放*/
+    transform: scale(1, 1.5); /*缩放属性；两个参数：(水平缩放比例,垂直缩放比例)；1表示原比例*/
+    /*私有缩放属性，为了兼容各浏览器；注：不兼容IE8以下浏览器*/
+    -ms-transform: scale(1, 1.5);
+    -webkit-transform: scale(1, 1.5);
+    -moz-transform: scale(1, 1.5);
+    -o-transform: scale(1, 1.5);
+}
+
+.general-info {
+    margin-bottom: 10px;
+}
+
+.general-info .general-info-t {
+    background: #fff;
+    padding: 24px 0 40px 24px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-shadow: 0 1px 8px 0 rgb(0 0 0);
+    box-shadow: 0 1px 8px 0 rgb(0 0 0);
+}
+
+.general-info .general-info-t .general-info-avatar {
+    flex-shrink: 0;
+    position: relative;
+    width: 96px;
+    height: 96px;
+    margin-right: 16px;
+    -webkit-box-shadow: 0 0 10px 2px rgb(0 0 0);
+    box-shadow: 0 0 10px 2px rgb(0 0 0);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.general-info .general-info-t .general-info-avatar > img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+}
+
+.general-info .general-info-t .general-info-t-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.general-info .general-info-t .general-info-t-info .profile-name-info {
+    margin-bottom: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.general-info .general-info-t .general-info-t-info .profile-name-info {
+    color: #222226;
+    font-weight: 500;
+    line-height: 24px;
+    font-size: 20px;
+    margin-right: 16px;
+}
+
+.person-name {
+    color: rgb(251, 114, 153);
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 700;
+    margin-right: 8px;
+    cursor: default;
+}
+
+.person-code-age {
+    font: 12px/1.5 Microsoft YaHei, tahoma, \\5B8B\4F53, sans-serif;
+    font-family: MicrosoftYaHei;
+    margin: 0;
+    border-radius: 4px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 12px;
+    box-sizing: border-box;
+    padding: 2px 4px;
+    background-color: rgb(251, 114, 153);
+    color: rgb(255, 255, 255);
+}
+
+.general-info .general-info-t .general-info-t-info .profile-name-info {
+    height: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.base-info {
+    /*width: 1000px;*/
+    background: #fff;
+    margin-bottom: 10px;
+}
+
+.base-info .base-info-head {
+    height: 48px;
+    line-height: 48px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2e2e2e;
+    padding-left: 16px;
+    border-bottom: 1px solid #f0f0f2;
+}
+
+.base-info .base-info-content {
+    padding: 16px;
+}
+
+.base-info .base-info-content .base-info-content-show {
+    -webkit-box-shadow: 0 1px 8px 0 rgb(0 0 0);
+    box-shadow: 0 1px 8px 0 rgb(0 0 0);
+    padding: 16px 112px 16px 0;
+    position: relative;
+}
+
+.base-info .base-info-content .base-info-content-show ul li {
+    line-height: 24px;
+    font-size: 14px;
+    list-style: none;
+    margin-bottom: 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.base-info .base-info-content .base-info-content-show ul li .content-show-l {
+    width: 56px;
+    color: #555666;
+    margin-right: 40px;
+    flex-shrink: 0;
+    padding-left: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.base-info .base-info-content .base-info-content-show ul li .content-show-r {
+    color: #222226;
+    word-break: break-all;
+}
+
+/*没有填写数据的信息，所使用的样式*/
+.base-info .base-info-content .base-info-content-show ul li .content-show-r.no-data {
+    color: #999aaa;
+}
+
+.base-info .base-info-content .base-info-content-show ul li .content-show-r img {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.base-info .base-info-content .base-info-content-show .edit-icon {
+    /*display: none;*/
+    cursor: pointer;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #1989fa;
+    font-size: 14px;
+}
+
+.base-info .base-info-content .base-info-content-show .edit-icon i {
+    display: inline-block;
+    margin-right: 2px;
+    width: 16px;
+    height: 16px;
+    background-size: 16px 16px;
+}
+
+.nickname, .email, .real-name, .sex, .self-introduction, .birthday {
+
+}
+
+/*下面是编辑个人信息的样式*/
+.base-info-content-edit {
+    min-height: 890px !important;
+    padding: 20px 20px 0;
+    position: relative;
+    background: #fff;
+}
+
+input:focus {
+    border-style: solid;
+    border-color: #03a9f4;
+}
+
+.security-right-title {
+    height: 50px;
+    padding-left: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+.padding-dom {
+    width: 789px;
+    height: 39px;
+    border-bottom: 1px solid #e5e9ef;
+    margin-bottom: 40px;
+}
+
+.user-my-btn-warp {
+    float: left;
+    width: 789px;
+    height: 36px;
+    position: relative;
+}
+
+.security-right-title-icon {
+    float: left;
+    width: 6px;
+    height: 18px;
+    margin-top: 18px;
+    background-color: #00a1d6;
+    border-radius: 4px;
+}
+
+.security-right-title-text {
+    float: left;
+    margin: 15px 0 0 5px;
+    color: #00a1d6;
+    font-size: 16px;
+    cursor: default;
+}
+
+.form-item {
+    float: left;
+    width: 789px;
+    margin-bottom: 22px;
+}
+
+.form-item__label {
+    width: 95px;
+    text-align: right;
+    margin-right: 20px;
+    float: left;
+    line-height: 30px;
+    padding: 0;
+    text-align: right;
+    vertical-align: middle;
+    float: left;
+    font-size: 14px;
+    color: #48576a;
+    line-height: 1;
+    padding: 11px 12px 11px 0;
+    box-sizing: border-box;
+}
+
+.form-item__content {
+    line-height: 36px;
+    position: relative;
+    font-size: 14px;
+}
+
+.el-input {
+    position: relative;
+    font-size: 14px;
+    float: left;
+    width: 225px;
+    height: 30px;
+    margin-right: 40px;
+}
+
+.input__inner {
+    float: left;
+    width: 225px;
+    margin-right: 40px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 4px;
+    border: 1px solid #bfcbd9;
+    box-sizing: border-box;
+    color: #1f2d3d;
+    font-size: inherit;
+    height: 36px;
+    line-height: 1;
+    outline: 0;
+    padding: 3px 10px;
+    transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+}
+
+.notice {
+    color: #aaa;
+    font-size: 15px;
+}
+
+.userinfo-descript {
+    font-size: 14px;
+    color: #898989;
+}
+
+.el-textarea__inner {
+    min-height: 33px;
+    font-size: 14px;
+    box-sizing: border-box;
+    float: left;
+    width: 618px;
+    height: 88px;
+    resize: none;
+}
+
+textarea:focus {
+    border-style: solid;
+    border-color: #03a9f4;
+}
+
+.radio-group {
+    display: inline-block;
+}
+
+.radio-button__orig-radio {
+    opacity: 0;
+    outline: 0;
+    position: absolute;
+    z-index: -1;
+    left: -999px;
+}
+
+.radio-button__inner, .radio-group {
+    line-height: 1;
+    vertical-align: middle;
+}
+
+.radio-button, .radio-button__inner {
+    display: inline-block;
+    position: relative;
+}
+
+.radio-button__inner {
+    margin-right: 20px;
+    padding: 5px 8px;
+    border: 1px solid #bfcbd9;
+    border-radius: 5px !important;
+    background: #f4f4f4;
+    color: #717171;
+}
+
+.radio-button__orig-radio:checked + .radio-button__inner {
+    background-color: #22a1d6 !important;
+    border-color: #22a1d6 !important;
+    color: #fff;
+    background-color: #20a0ff;
+    border-color: #20a0ff;
+    box-shadow: -1px 0 0 0 #20a0ff;
+}
+
+.input__icon {
+    position: absolute;
+    width: 0px;
+    height: 100%;
+    right: 0;
+    top: 0;
+    text-align: center;
+    color: #bfcbd9;
+}
+
+.input__icon:after {
+    height: 100%;
+    width: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.date-editor.el-input {
+    color: #bfcbd9;
+    width: 193px;
+}
+
+.el-button {
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #c4c4c4;
+    color: #1f2d3d;
+    margin: 0;
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+
+.save-button {
+    color: #fff;
+    border-color: #20a0ff;
+    width: 110px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: #00a1d6 !important;
+}
+
+/*日期选择器样式*/
+.form-item:after, .form-item__content:after, .picker__body-wrapper:after, .picker__body:after {
+    clear: both;
+}
+
+.date-picker {
+    color: #48576a;
+    box-shadow: 0 2px 6px #ccc;
+    background: #fff;
+    line-height: 20px;
+    margin: 5px 0;
+    width: 254px;
+    position: absolute;
+    top: 55%;
+    left: 13%;
+    z-index: 2006;
+}
+
+.picker__body-wrapper:after, .picker__body:after {
+    content: "";
+    display: table;
+}
+
+/*日期选择器头部样式*/
+.picker__header {
+    padding-top: 20px;
+    margin: 12px;
+    text-align: center;
+}
+
+[class*=" el-icon-"] {
+    font-family: element-icons !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: baseline;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.picker__icon-btn {
+    font-size: 12px;
+    color: #97a8be;
+    border: 0;
+    background: 0 0;
+    cursor: pointer;
+    outline: 0;
+    margin-top: 3px;
+}
+
+.picker__icon-btn:active {
+    color: #20a0ff;
+}
+
+.picker__prev-btn {
+    float: left;
+}
+
+.picker__header-label {
+    font-size: 14px;
+    padding: 0 5px;
+    line-height: 22px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.picker__next-btn {
+    float: right;
+}
+
+/*日期选择器主体样式*/
+.picker__content {
+    position: relative;
+    margin: 15px;
+    min-width: 224px;
+}
+
+.date-picker table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.date-table {
+    font-size: 12px;
+    min-width: 224px;
+    user-select: none;
+}
+
+.date-table th {
+    text-align: left;
+    padding: 5px;
+    color: #8391a5;
+    font-weight: 400;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.date-table td {
+    width: 32px;
+    height: 32px;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+}
+
+.date-table td.next-month, .date-table td.prev-month, .date-table td.not-available {
+    color: #ddd;
+}
+
+.date-table td.available:hover {
+    background: #ddd;
+}
+
+td.active {
+    background-color: #20a0ff !important;
+    color: #fff;
+}
+
+.dialog-wrap-box {
+    font: 12px/1.5 Microsoft YaHei, tahoma, \\5B8B\4F53, sans-serif;
+    color: #717171;
+    font-size: 12px;
+    font-family: MicrosoftYaHei;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    z-index: 1000;
+}
+
+.dialog-contnent {
+    font: 12px/1.5 Microsoft YaHei, tahoma, \\5B8B\4F53, sans-serif;
+    color: #717171;
+    font-size: 12px;
+    font-family: MicrosoftYaHei;
+    margin: 0;
+    padding: 0;
+    width: 360px;
+    height: 335px;
+    background: #fff;
+    box-shadow: 0 3px 26px rgba(0, 0, 0, .9);
+    border-radius: 4px;
+    animation: dialog-warp .3s;
+}
+
+.dialog-title {
+    font: 12px/1.5 Microsoft YaHei, tahoma, \\5B8B\4F53, sans-serif;
+    color: #717171;
+    font-size: 12px;
+    font-family: MicrosoftYaHei;
+    margin: 0;
+    width: 360px;
+    height: 50px;
+    border-bottom: 1px solid #e5e9ef;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.dialog-title-txt {
+    font: 12px/1.5 Microsoft YaHei, tahoma, \\5B8B\4F53, sans-serif;
+    font-family: MicrosoftYaHei;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: #222;
+}
+
+.dialog-title-icon {
+    font: 12px/1.5 Microsoft YaHei, tahoma, \\5B8B\4F53, sans-serif;
+    color: #717171;
+    font-size: 12px;
+    font-family: MicrosoftYaHei;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAANhJREFUOBHNkzESwiAQRSGpPIytrSewpdDW8U46lmpB6wlsvZAVos+Zz0QS0NEmNBvY/x+7QIwZ7dge/HR/9LNvC0SLR/pGH601k3C3593Jz7VWimjQ4pEmgdYrd7VtdDFYX4ORQ4MWj0BWH4pd4WbpLlon1nI9UMlQg+AZBOUw5monr5IcowgiqSpewueZlCDk02Ez+WcUK1I13A4b/NRaF6J2hta6HfQqqhlquTdQTajdS5oE4t/h2XMmakfmPArWNnGh151uLURzI/EJAhQNWjz5JuOZPwDXF66M8ZXOvwAAAABJRU5ErkJggg==) no-repeat;
+}
+
+.dialog-content {
+    font: 12px/1.5 Microsoft YaHei, tahoma, \\5B8B\4F53, sans-serif;
+    color: #717171;
+    font-size: 12px;
+    font-family: MicrosoftYaHei;
+    margin: 0;
+    padding: 0;
+    width: 360px;
+    height: 270px;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.dialog-success-content {
+    font: 12px/1.5 Microsoft YaHei, tahoma, \\5B8B\4F53, sans-serif;
+    color: #717171;
+    font-size: 12px;
+    font-family: MicrosoftYaHei;
+    margin: 0;
+    padding: 0;
+}
+
+.dialog-success-img {
+    font: 12px/1.5 Microsoft YaHei, tahoma, \\5B8B\4F53, sans-serif;
+    color: #717171;
+    font-size: 12px;
+    font-family: MicrosoftYaHei;
+    padding: 0;
+    width: 118px;
+    height: 124px;
+    margin: 0 auto;
+    background: url(../res/3stars.png);
+    width: 68%;
+    height: 100px;
+    background-size: cover;
+}
+
+.dialog-success-explain {
+    font: 12px/1.5 Microsoft YaHei, tahoma, \\5B8B\4F53, sans-serif;
+    font-family: MicrosoftYaHei;
+    margin: 0;
+    padding: 0;
+    margin-top: 32px;
+    text-align: center;
+    font-size: 14px;
+    color: #212121;
+}
+
+.dialog-btn-warp {
+    font: 12px/1.5 Microsoft YaHei, tahoma, \\5B8B\4F53, sans-serif;
+    color: #717171;
+    font-size: 12px;
+    font-family: MicrosoftYaHei;
+    margin: 0;
+    padding: 0;
+}
+
+.dialog-btn {
+    font: 12px/1.5 Microsoft YaHei, tahoma, \\5B8B\4F53, sans-serif;
+    font-family: MicrosoftYaHei;
+    padding: 0;
+    width: 120px;
+    height: 32px;
+    background: #00a1d6;
+    border-radius: 4px;
+    color: #fff;
+    margin: 0 auto;
+    line-height: 32px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 32px;
+    cursor: pointer;
+}

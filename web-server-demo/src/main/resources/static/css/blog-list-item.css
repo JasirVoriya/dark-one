@@ -1,0 +1,112 @@
+li, ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.consoleHome-listData {
+    padding: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+    background: #fff;
+
+}
+
+.consoleHome-listData:hover {
+    background: #cccccc;
+}
+
+.consoleHome-listData-left {
+    display: flex;
+    flex-direction: row;
+    max-width: 680px;
+    width: 100%;
+    overflow: hidden;
+    align-items: baseline;
+    margin-right: 20px;
+}
+
+.consoleHome-listData-mark {
+    padding: 0 2px;
+    white-space: nowrap;
+    max-width: 34px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 12px;
+    background: #fff;
+    border-radius: 2px;
+    color: #00a1d6;
+    border: 1px solid #00a1d6;
+    margin-right: 16px;
+}
+
+.consoleHome-listData-desc {
+    width: 100%;
+    max-width: 700px;
+    min-width: 200px;
+    overflow: hidden;
+}
+
+.consoleHome-listData-desc a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.consoleHome-listData-desc p {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.consoleHome-listData-desc p:first-child {
+    font-size: 16px;
+    color: #222227;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+.consoleHome-listData-desc p:last-child {
+    font-size: 14px;
+    color: #555666;
+    margin-top: 8px;
+    line-height: 22px;
+}
+
+.consoleHome-listData-num {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 200px;
+}
+
+.consoleHome-listData-num li .listNum {
+    cursor: pointer;
+}
+
+.consoleHome-listData-num li p:first-child {
+    font-size: 18px;
+    font-weight: 600;
+    color: #474747;
+    line-height: 25px;
+}
+
+.consoleHome-listData-num li p:last-child {
+    font-size: 14px;
+    margin-top: 8px;
+    color: #555666;
+    line-height: 22px;
+}
+
+.consoleHome-listData-num li p {
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

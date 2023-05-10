@@ -1,0 +1,40 @@
+.avatar-box {
+    background: #fff;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.my-avatar {
+    margin: 10px;
+    border-radius: 50%;
+    width: 30%;
+    height: 30%;
+}
+
+.avatar-item {
+    text-align: center;
+}
+
+.btn-item {
+    text-align: center;
+}
+
+.btn-item * {
+    margin: 2px;
+}
+
+.file-dialog {
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+}
+
+.file-dialog:focus {
+    border-color: #62FFA0;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+}

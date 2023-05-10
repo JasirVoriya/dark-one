@@ -1,0 +1,102 @@
+.comment-list {
+    min-width: 800px;
+}
+
+.comment-list-item {
+    background: #c8f6da;
+    border-radius: 10px;
+    padding: 10px 0 10px 10px;
+    margin: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    position: relative;
+}
+
+.comment-left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+
+.comment-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.comment-content {
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.comment-nickname {
+    font-size: 17px;
+    font-weight: 900;
+}
+
+.comment-text {
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.comment-right {
+    display: block;
+    width: 20%;
+    min-width: 200px;
+    text-align: center;
+    margin: 10px;
+}
+
+.comment-time {
+    font-size: 15px;
+    font-weight: 800;
+    font-family: emoji;
+    color: #aaa;
+}
+
+.comment-send-bar {
+    padding: 10px 10px 60px 10px;
+}
+
+.comment-input {
+    resize: none;
+    font-size: 15px;
+    font-weight: 600;
+    display: block;
+    width: 100%;
+    height: 200px;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+}
+
+.comment-input:focus {
+    border-color: #62FFA0;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+}
+
+.send-btn {
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.comment-box {
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 30px;
+    background: rgb(251, 114, 153);
+}

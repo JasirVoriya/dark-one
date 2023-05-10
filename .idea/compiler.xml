@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="byte-hi" />
+        <module name="core" />
+        <module name="security" />
+        <module name="web-mvc" />
+        <module name="byte-bye" />
+        <module name="web-server-demo" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

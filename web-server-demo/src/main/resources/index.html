@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>日月坞</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+
+<!--    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>-->
+
+    <link rel="stylesheet" href="static/css/default.css">
+    <link rel="stylesheet" href="static/vivify/vivify.min.css">
+    <link rel="stylesheet" href="static/css/toolbar-profile.css">
+    <style type="text/css">
+        .user-center {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .writing-center-btn {
+            border: 0;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body class="default-background">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- 品牌和切换分组，以更好的移动显示 -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="" style="font-weight: 900;"><span style="color: crimson;">日</span>月坞</a>
+        </div>
+        <!-- 收集用于切换的导航链接、表单和其他内容 -->
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav">
+                <li id="home-page-button" class="active"><a href="static/view/home-page.html" target="main-page">首页</a>
+                </li>
+                <li id="blog-button"><a href="static/view/blog.html" target="main-page">博客</a></li>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="搜索" id="search-input">
+                </div>
+                <button type="submit" class="btn btn-danger" id="search-btn">搜索</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li id="register-button"><a href="static/view/register.html" target="main-page">登录/注册</a></li>
+                <li id="user-center-button" style="display: none;margin: 5px 30px 2px 100px;">
+                    <img id="avatar" alt="个人中心" class="user-center">
+                    <div id="toolbar-profile" class="vivify pullDown">
+                        <div class="profile-top">
+                            <p class="profile-nickname">nickname</p>
+                        </div>
+                        <div class="profile-mid">
+                            <a href="static/view/user-center.html?index=1" target="main-page">
+                                <i class="profile-fans-count">-</i>粉丝
+                            </a>
+                            <a href="static/view/user-center.html?index=2" target="main-page">
+                                <i class="profile-follow-count">-</i>关注
+                            </a>
+                            <a href="#">
+                                <i class="profile-like-count">-</i>获赞
+                            </a>
+                        </div>
+                        <div class="profile-bottom">
+                            <ul>
+                                <li class="pb-8">
+                                    <a href="static/view/user-center.html?index=0" target="main-page">
+                                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人中心
+                                    </a>
+                                </li>
+                                <li class="pb-8">
+                                    <a href="static/view/writing-center.html?index=1" target="_blank">
+                                        <span class="glyphicon glyphicon-file" aria-hidden="true"></span>内容管理
+                                    </a>
+                                </li>
+                                <li class="pb-8">
+                                    <a href="static/view/writing-center.html?index=2" target="_blank">
+                                        <span class="glyphicon glyphicon-education" aria-hidden="true"></span>专栏管理
+                                    </a>
+                                </li>
+                                <li role="separator" class="divider"></li>
+                                <li class="pb-8">
+                                    <a class="logout-button">
+                                        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>退出
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="static/view/writing-center.html?index=2" target="_blank">专栏管理</a>
+                </li>
+                <li>
+                    <a href="static/view/user-center.html?index=1" target="main-page">我的粉丝</a>
+                </li>
+                <li>
+                    <a href="static/view/user-center.html?index=2" target="main-page">我的关注</a>
+                </li>
+                <li>
+                    <a href="static/view/message.html" target="_blank">消息</a>
+                </li>
+                <li id="writing-center-button">
+                    <button class="writing-center-btn">
+                        <a href="static/view/writing-center.html?index=0" class="btn btn-danger" target="_blank">
+                            创作中心
+                        </a>
+                    </button>
+                    <!--                    <button type="submit" class="btn btn-danger" id="search-btn">搜索</button>-->
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<iframe src="static/view/home-page.html" frameborder="0" name="main-page" id="main-page" onload="changeFrameHeight()"></iframe>
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="static/bootstrap/js/jquery-1.12.4.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="static/bootstrap/js/bootstrap.min.js"></script>
+<script src="static/js/default.js"></script>
+<script src="static/js/jquery.cookie.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //如果token正确
+        if (verify()) {
+            $('.user-center').attr('src', '/getAvatar?id=' + $.cookie('id'));
+            // 显示头像
+            $('#user-center-button').show();
+            //隐藏登陆注册按钮
+            $('#register-button').hide();
+            // 获取用户基本信息
+            $.post('/getUserProFileInfo', {user_id: $.cookie('id')},
+                function (res) {
+                    let data = res['data'];
+                    if (data['data'] != null) {
+                        $('.profile-fans-count').html(data['data']['fans_count']);
+                        $('.profile-follow-count').html(data['data']['follow_count']);
+                        $('.profile-like-count').html(data['data']['like_count']);
+                        $('.profile-nickname').html(data['data']['nickname']);
+                    }
+                });
+        }
+        //退出按钮
+        $('.logout-button').click(function () {
+            $.removeCookie('token');
+            $.removeCookie('id');
+            location.reload();
+        });
+        // 搜索按钮
+        $('#search-btn').click(function () {
+            window.open("/static/view/search.html?search=" + escape($('#search-input').val()));
+        });
+        //鼠标移入和移出，显示或隐藏
+        $("#user-center-button").mouseenter(function () {
+            $(this).children("#toolbar-profile").show();
+        }).mouseleave(function () {
+            console.log('鼠标移出');
+            $(this).children("#toolbar-profile").hide();
+        });
+        // 移出隐藏
+        $("#toolbar-profile").mouseleave(function () {
+            $(this).hide();
+        });
+        //点击子菜单项的时候隐藏子菜单
+        $("#toolbar-profile").click(function () {
+            $(this).hide();
+        });
+        //点击的时候切换活动按钮样式
+        let navbar_action_id = "home-page-button";
+        $("li").click(function () {
+            let id = this.id;
+            $("#" + navbar_action_id).toggleClass("active");
+            $("#" + id).toggleClass("active");
+            navbar_action_id = id;
+        });
+    });
+
+    function changeFrameHeight() {
+        let ifm = document.getElementById("main-page");
+        ifm.height = document.documentElement.clientHeight * 0.92;
+        ifm.width = document.documentElement.clientWidth;
+    }
+
+    window.onresize = function () {
+        changeFrameHeight();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>消息</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap-dialog/css/bootstrap-dialog.min.css">
+    <style>
+        .app {
+            display: flex;
+            margin-top: 60px;
+            position: absolute;
+            height: 93%;
+            width: 90%;
+            left: 5%;
+        }
+
+        .app > div {
+            margin: 10px;
+            background: rgb(23, 25, 28);
+            padding: 10px;
+        }
+
+        .user-box {
+            background: #fff111;
+            width: 20%;
+            min-width: 280px;
+            height: 90%;
+        }
+
+        .msg-box {
+            background: #1ff131;
+            width: 20%;
+            min-width: 350px;
+            height: 90%;
+        }
+
+        .chat-box {
+            background: #1f4131;
+            width: 60%;
+            min-width: 400px;
+            height: 90%;
+        }
+
+        .msg-title, .chat-title {
+
+            text-align: center;
+            color: #fff;
+            font-size: 25px;
+            font-weight: 900;
+        }
+    </style>
+    <style>
+        .fans_title a, .following_title a {
+            text-decoration: none; /*清除下划线  */
+        }
+
+        .session_list_item, .fans_list_item, .following_list_item {
+            background: #272727;
+            padding: 16px;
+            cursor: pointer;
+            margin: 5px;
+            border-radius: 5px;
+        }
+
+        .session_list_item:hover, .fans_list_item:hover, .following_list_item:hover {
+            background: #cccccc;
+        }
+
+        .following_list_item_content, .fans_list_item_content {
+            display: flex;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            position: relative;
+            width: 100%;
+        }
+
+        .following_list_item_left, .fans_list_item_left {
+            display: flex;
+            width: 80%;
+        }
+
+        .following_avatar, .fans_avatar {
+            width: 48px;
+            height: 48px;
+            border: 1px solid #e8e8ed;
+            border-radius: 50%;
+            margin-right: 9px;
+        }
+
+        .following_content, .fans_content {
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .following_title, .fans_title {
+            margin: 3px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #222226;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+        }
+
+        .following-name, .fans-name {
+            font-family: Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+            list-style: none;
+            white-space: nowrap;
+            font-size: 16px;
+            line-height: 19px;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+            word-break: break-word;
+            color: rgb(251, 114, 153);
+        }
+
+        .desc {
+            font-size: 12px;
+            font-family: Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+            word-break: break-word;
+            line-height: 20px;
+            color: #cccccc;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            text-overflow: ellipsis;
+            padding-right: 10px;
+        }
+
+        .msg {
+            font-size: 12px;
+            font-family: Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+            word-break: break-word;
+            line-height: 20px;
+            color: #7d7c7c;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            text-overflow: ellipsis;
+            padding-right: 10px;
+        }
+
+        .session_list_item_right {
+            display: grid;
+            -webkit-box-align: center;
+            align-items: center;
+            min-width: 65px;
+            text-align: center;
+            font-size: 10px;
+            font-weight: 900;
+            color: #ccc;
+        }
+
+        .avatar {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+        }
+    </style>
+    <style>
+        .chat-list {
+            height: 80%;
+            background: rgb(33 36 41);
+            overflow-y: auto;
+        }
+
+        .comment-send-bar {
+            height: 90%;
+        }
+
+        .comment-input {
+            resize: none;
+            font-size: 15px;
+            font-weight: 600;
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 6px 12px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+            box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+        }
+
+        .comment-input:focus {
+            border-color: #62FFA0;
+            outline: 0;
+            -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+            box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+        }
+
+        .send-btn {
+            float: right;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+
+        .comment-box {
+            height: 20%;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .chat-pane {
+            height: 90%;
+        }
+    </style>
+    <style>
+        .comment-list-item {
+            background: #c8f6da;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            position: relative;
+            width: 97%;
+        }
+
+        .comment-left {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+        }
+
+
+        .comment-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+        }
+
+        .comment-content {
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 5px;
+            display: inline-block;
+        }
+
+        .comment-nickname {
+            font-size: 17px;
+            font-weight: 900;
+            display: block;
+        }
+
+        .comment-text {
+            font-size: 15px;
+            font-weight: 600;
+            margin-right: 10px;
+            margin-left: 10px;
+            margin-top: 10px;
+            background: rgba(0, 204, 31, 0.55);
+            border-radius: 10px;
+            line-height: 1.5;
+            padding: 7px;
+            display: inline-block;
+            word-break: break-all;
+        }
+
+        .comment-right {
+            display: block;
+            width: 20%;
+            min-width: 40px;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .comment-time {
+            font-size: 15px;
+            font-weight: 800;
+            font-family: emoji;
+            color: #aaa;
+        }
+    </style>
+    <style>
+        .follow-list, .fans-list, .session-list {
+            overflow-y: auto;
+        }
+
+        .unread {
+            border-radius: 50px;
+            background: #6bf66b;
+            width: 10px;
+            height: 10px;
+        }
+
+        .already-read {
+            /*border-radius: 50px;*/
+            opacity: 0;
+        }
+    </style>
+</head>
+<body style="background:rgba(33,36,41,1);">
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- 品牌和切换分组，以更好的移动显示 -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/" style="font-weight: 900;"><span style="color: crimson;">日</span>月坞</a>
+            <span class="navbar-brand">消息</span>
+            <img alt="头像" class="avatar" style="display: none;margin: 5px">
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="app">
+    <div class="user-box">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active">
+                <a href="#follow-list" data-toggle="tab">关注</a>
+            </li>
+            <li>
+                <a href="#fans-list" data-toggle="tab">粉丝</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active follow-list" id="follow-list">
+            </div>
+            <div class="tab-pane fans-list" id="fans-list">
+            </div>
+        </div>
+    </div>
+    <div class="msg-box">
+        <p class="msg-title">会话</p>
+        <div class="session-list">
+        </div>
+    </div>
+    <div class="chat-box">
+        <p class="chat-title">未选择会话</p>
+        <div class="chat-pane">
+            <div class="chat-list">
+            </div>
+            <div class="comment-box">
+                <div class="comment-send-bar">
+                    <textarea placeholder="" class="comment-input" maxlength="255"></textarea>
+                    <span class="btn btn-info send-btn">发送</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="../bootstrap/js/jquery-1.12.4.min.js"></script>
+<script src="../js/jquery.cookie.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../bootstrap-dialog/js/bootstrap-dialog.min.js"></script>
+<script src="../js/default.js"></script>
+<script type="text/javascript">
+    function is_today(time) {
+        let now = new Date();
+        let year = time.getFullYear();
+        let month = time.getMonth();
+        let day = time.getDate();
+        let yearN = now.getFullYear();
+        let monthN = now.getMonth()
+        let dayN = now.getDate();
+        if (day == dayN && month == monthN && yearN == year) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function format_send_time(send_time) {
+        if (is_today(send_time)) {
+            let h = send_time.getHours();
+            let m = send_time.getMinutes();
+            return (h < 10 ? '0' + h : h) + ':' + (m < 10 ? '0' + m : m);
+        } else {
+            let m = send_time.getMonth();
+            let d = send_time.getDate();
+            return (m < 10 ? '0' + m : m) + '月' + (d < 10 ? '0' + d : d) + '日';
+        }
+    }
+
+    // 生成粉丝列表条目
+    function make_fans_list_item(data) {
+        return `
+             <div class="fans_list_item" fans_id="${data['fans_id']}" title="${data['nickname']}">
+                <div class="fans_list_item_content">
+                    <div class="fans_list_item_left">
+                        <a target="_blank">
+                            <img src='/getAvatar?id=${data['fans_id']}' alt="" class="fans_avatar">
+                        </a>
+                        <div class="fans_content">
+                            <div class="fans_title">
+                                <div class="fans-name">
+                                    ${data['nickname']}
+                                </div>
+                            </div>
+                            <div class="desc">
+                                ${data['self_introduction']}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+    }
+
+    // 生成关注列表条目
+    function make_following_list_item(data) {
+        return `
+             <div class="following_list_item" following_id="${data['following_id']}" title="${data['nickname']}">
+                <div class="following_list_item_content">
+                    <div class="following_list_item_left">
+                        <a target="_blank">
+                            <img src='/getAvatar?id=${data['following_id']}' alt="" class="following_avatar">
+                        </a>
+                        <div class="following_content">
+                            <div class="following_title">
+                                 <div class="following-name">${data['nickname']}</div>
+                            </div>
+                            <div class="desc">
+                                ${data['self_introduction']}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+    }
+
+    // 生成会话列表条目
+    function make_session_list_item(data) {
+        if (data == null) return null;
+        let send_time = new Date(data['send_time']);
+        let time = format_send_time(send_time);
+        return `
+             <div class="session_list_item" session_id="${data['session_id']}" title="${data['session_name']}">
+                <div class="fans_list_item_content">
+                    <div class="fans_list_item_left">
+                        <a target="_blank">
+                            <img src='/getAvatar?id=${data['session_id']}' alt="" class="fans_avatar">
+                        </a>
+                        <div class="fans_content">
+                            <div class="fans_title">
+                                <div class="fans-name">${data['session_name']}</div>
+                            </div>
+                            <div class="msg">
+                            ${data['msg']}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="session_list_item_right">
+                    <span>${time}</span>
+                    <span class=${data['is_new'] ? 'unread' : 'already-read'}></span>
+                    </div>
+                </div>
+            </div>`;
+    }
+
+    // 控件生成器（消息列表条目）
+    function make_chat_list_item(data) {
+        let id = $.cookie('id');
+        if (data == null || id == null) return null;
+        if (data == null) return null;
+        let send_time = new Date(data['send_time']);
+        let time = format_send_time(send_time);
+        if (data['sender_id'] == id)
+            // 自己
+            return `
+            <div class="comment-list-item">
+                    <div class="comment-right">
+                        <span class="comment-time" style="float: left;">${time}</span>
+                    </div>
+                    <div class="comment-left">
+                        <div class="comment-content" style="text-align: right;">
+                            <span class="comment-nickname">${data['sender_name']}</span>
+                            <span class="comment-text">${data['msg']}</span>
+                        </div>
+                        <img src="/getAvatar?id=${data['sender_id']}" class="comment-avatar">
+                    </div>
+                </div>
+            `;
+        // 对方
+        return `
+        <div class="comment-list-item">
+            <div class="comment-left">
+                <img src="/getAvatar?id=${data['sender_id']}" class="comment-avatar">
+                <div class="comment-content">
+                    <span class="comment-nickname">${data['sender_name']}</span>
+                    <span class="comment-text">${data['msg']}</span>
+                </div>
+            </div>
+            <div class="comment-right">
+                <span class="comment-time" style="float: right;">${time}</span>
+            </div>
+        </div>
+        `;
+    }
+
+    let ws = null;
+
+    //发消息
+    function send_msg(to_id, msg) {
+        if (typeof msg != 'string' || msg == '') return null;
+        $.post('/sendMsg', {to_id: to_id, msg: msg}, function (res) {
+            if (res['success']) {
+                ws.send(JSON.stringify({msg_id: res['data']['id'], to_id: to_id}));
+                $('.comment-input').val('');
+                $.post('/getChatMsgByID', {id: res['data']['id']}, function (res) {
+                    if (res['data']['data']) {
+                        update_chat(res['data']['data'], $.cookie('id'), false);
+                    }
+                })
+            } else {
+                $.showErr(res['message']);
+            }
+        })
+    }
+
+    function update_chat(data, to_id, is_new) {
+        if (data == null) return;
+        let id = $.cookie('id');
+        let session_id = data['sender_id'] == id ? data['receiver_id'] : data['sender_id'];
+        let session_name = data['sender_id'] == id ? data['receiver_name'] : data['sender_name'];
+        data['session_id'] = session_id;
+        data['session_name'] = session_name;
+        data['is_new'] = is_new;
+        // 更新聊天面版
+        if (to_id == data['sender_id']) {
+            $.push_back_controller($('.chat-list'), make_chat_list_item, [data]);
+            let scrollHeight = $('.chat-list').prop("scrollHeight");
+            $('.chat-list').animate({scrollTop: scrollHeight}, 400);
+        }
+        // 更新会话面板
+        $(`.session_list_item[session_id=${session_id}]`).remove();
+        $.push_front_controller($('.session-list'), make_session_list_item, [data]);
+        // 为新会话列表绑定点击事件
+        $(`.session_list_item[session_id=${session_id}]`).click(function () {
+            let id = $(this).attr('session_id');
+            let title = $(this).attr('title');
+            toggle_chat(id, title);
+        });
+    }
+
+    //切换chat-list数据
+    function toggle_chat(id, title) {
+        let $stat = $(`.session_list_item[session_id=${id}] .unread`);
+        // 将会话标记为已读
+        if ($stat) {
+            $stat.toggleClass('unread');
+            $stat.toggleClass('already-read');
+        }
+        $('.chat-list').empty();
+        $('.chat-box').attr('to_id', id);
+        $('.chat-title').text(title);
+        $.get('/getChatMsg', {to_id: id, page: 1, size: 30}, function (res) {
+            let data = res['data'];
+            if (data['data']) {
+                $.push_front_controller($('.chat-list'), make_chat_list_item, data['data']);
+                let scrollHeight = $('.chat-list').prop("scrollHeight");
+                $('.chat-list').animate({scrollTop: scrollHeight}, 400);
+            }
+        })
+    }
+
+    $(function () {
+        const host = window.location.host;
+        //如果token正确
+        if (verify()) {
+            if ('WebSocket' in window) {
+                ws = new WebSocket(`ws://${host}/sendMsgWebsocket/${$.cookie('id')}`);
+                ws.onopen = function () {
+                };
+                // 收到信息
+                ws.onmessage = function (res) {
+                    let to_id = $('.chat-box').attr('to_id');
+
+                    let data = JSON.parse(res['data']);
+                    console.log(data);
+                    update_chat(data, to_id, true);
+                };
+                ws.onclose = function () {
+                    // alert("连接已关闭...");
+                };
+                ws.onerror = function () {
+                    alert("聊天室发生错误");
+                };
+            }
+            // 获取头像
+            $('.avatar').attr('src', '/getAvatar?id=' + $.cookie('id'));
+            // 显示头像
+            $('.avatar').show();
+            // 获取粉丝列表
+            $.get('/getFansList', function (res) {
+                let data = res['data']['data'];
+                if (data != null) {
+                    // 向粉丝列表里面添加粉丝信息
+                    $.push_back_controller($('.fans-list'), make_fans_list_item, data);
+                    // 为粉丝列表绑定点击事件
+                    $('.fans_list_item').click(function () {
+                        let id = $(this).attr('fans_id');
+                        let title = $(this).attr('title');
+                        toggle_chat(id, title);
+                    });
+                }
+            });
+            // 获取关注列表
+            $.get('/getFollowingList', function (res) {
+                let data = res['data']['data'];
+                if (data != null) {
+                    // 向粉丝列表里面添加粉丝信息
+                    $.push_back_controller($('.follow-list'), make_following_list_item, data);
+                    // 为关注列表绑定点击事件
+                    $('.following_list_item').click(function () {
+                        let id = $(this).attr('following_id');
+                        let title = $(this).attr('title');
+                        toggle_chat(id, title);
+                    });
+                }
+            });
+            // 获取会话列表
+            $.get('/getLastChatList', function (res) {
+                let data = res['data']['data'];
+                if (data) {
+                    // 向会话表里面添加信息
+                    $.push_back_controller($('.session-list'), make_session_list_item, data);
+                    // 为会话列表绑定点击事件
+                    $('.session_list_item').click(function () {
+                        let id = $(this).attr('session_id');
+                        let title = $(this).attr('title');
+                        toggle_chat(id, title);
+                    });
+                }
+            });
+            //发送按钮绑定点击事件
+            $('.send-btn').click(function () {
+                let to_id = $('.chat-box').attr('to_id');
+                if (to_id != null) {
+                    let msg = $('.comment-input').val();
+                    send_msg(to_id, msg);
+                } else {
+                    $.showErr('请选择会话。', null);
+                }
+            });
+            // 监听输入框的回车事件
+            $('.comment-input').keyup(function (e) {
+                    // 只按下了回车
+                    if (e.keyCode == 13 && e.shiftKey == false) {
+                        $('.send-btn').click();
+                    }
+                    // 同时按下shift+enter
+                    else if (e.keyCode == 13 && e.shiftKey == true) {
+                        // this.value += '\n';
+                    }
+                }
+            );
+        }else{
+            $.showErr('请先登录', null);
+        }
+
+    });
+</script>
+</body>
+</html>

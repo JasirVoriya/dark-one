@@ -1,0 +1,141 @@
+.fans_list_item {
+    border-radius: 3px;
+    margin: 10px;
+    width: 98%;
+    background: #fff;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.fans_list_item_content {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+}
+
+.fans_list_item_left {
+    display: flex;
+}
+
+.fans_avatar {
+    width: 48px;
+    height: 48px;
+    border: 1px solid #e8e8ed;
+    border-radius: 50%;
+    margin-right: 9px;
+    cursor: pointer;
+}
+
+.fans_content {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.fans_title {
+    margin: 3px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #222226;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.fans_title a {
+    text-decoration: none; /*清除下划线  */
+}
+
+.fans-name {
+    font-family: Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+    list-style: none;
+    white-space: nowrap;
+    font-size: 16px;
+    line-height: 19px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    word-break: break-word;
+    color: rgb(251, 114, 153);
+}
+
+.desc {
+    font-size: 12px;
+    font-family: Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    word-break: break-word;
+    line-height: 20px;
+    color: #6d757a;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    text-overflow: ellipsis;
+    padding-right: 10px;
+}
+
+.fans_list_item_right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-left: 32px;
+}
+
+.fans-btn {
+    width: 96px;
+    height: 32px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 32px;
+    cursor: pointer;
+    font-family: MicrosoftYaHei;
+    background-color: rgb(251, 114, 153);
+    color: rgb(255, 255, 255);
+}
+
+.mutual-following-btn {
+
+    background-color: #e5e9ef;
+    color: #6d757a;
+
+    width: 96px;
+    height: 32px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 32px;
+    cursor: pointer;
+    font-family: MicrosoftYaHei;
+}
+
+.my-fans-list-title {
+    height: 50px;
+    padding-left: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+.my-fans-list-title-icon {
+    float: left;
+    width: 6px;
+    height: 18px;
+    margin-top: 18px;
+    background-color: rgb(251, 114, 153);
+    border-radius: 4px;
+}
+
+.my-fans-list-title-text {
+    float: left;
+    margin: 15px 0 0 5px;
+    color: rgb(251, 114, 153);
+    font-size: 16px;
+    cursor: default;
+}
