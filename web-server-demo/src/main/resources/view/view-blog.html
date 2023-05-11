@@ -8,12 +8,12 @@
     <title>博客</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/default.css">
-    <link rel="stylesheet" href="../bootstrap-dialog/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/default.css">
+    <link rel="stylesheet" href="/static/bootstrap-dialog/css/bootstrap-dialog.min.css">
     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/comment-box.css">
-    <!--    <link rel="stylesheet" href="../css/toolbar-profile.css">-->
+    <link rel="stylesheet" href="/css/comment-box.css">
+    <!--    <link rel="stylesheet" href="/css/toolbar-profile.css">-->
     <style type="text/css">
         #toolbar-profile {
             margin-left: 30px;
@@ -325,13 +325,13 @@
     <div style="height: 300px;"></div>
 </div>
 <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-<script src="../bootstrap/js/jquery-1.12.4.min.js"></script>
-<script src="../js/jquery.cookie.min.js"></script>
+<script src="/static/bootstrap/js/jquery-1.12.4.min.js"></script>
+<script src="/js/jquery.cookie.min.js"></script>
 <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-<script src="../bootstrap/js/bootstrap.min.js"></script>
-<script src="../bootstrap-dialog/js/bootstrap-dialog.min.js"></script>
-<script src="../js/default.js"></script>
-<script src="../js/comment-box.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/bootstrap-dialog/js/bootstrap-dialog.min.js"></script>
+<script src="/js/default.js"></script>
+<script src="/js/comment-box.js"></script>
 <!--editor-->
 <script src="/static/editor-md/editormd.min.js"></script>
 <script src="/static/editor-md/lib/marked.min.js"></script>
@@ -478,7 +478,7 @@
                 // 获取作者头像
                 $('.user-center').attr('src', '/getAvatar?id=' + data['author_id']);
                 // 添加跳转到作者个人信息页面的链接
-                $('#author-space').attr('href', `/static/view/user-space.html?id=${data['author_id']}`)
+                $('#author-space').attr('href', `/view/user-space.html?id=${data['author_id']}`)
                 // 我是否关注该作者
                 $.get('/isFollowing', {user_id: data['author_id']}, function (res) {
                     if (res['success']) {

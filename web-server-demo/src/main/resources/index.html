@@ -8,14 +8,14 @@
     <title>日月坞</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
 
 <!--    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>-->
 <!--    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>-->
 
-    <link rel="stylesheet" href="static/css/default.css">
-    <link rel="stylesheet" href="static/vivify/vivify.min.css">
-    <link rel="stylesheet" href="static/css/toolbar-profile.css">
+    <link rel="stylesheet" href="/css/default.css">
+    <link rel="stylesheet" href="/static/vivify/vivify.min.css">
+    <link rel="stylesheet" href="/css/toolbar-profile.css">
     <style type="text/css">
         .user-center {
             border-radius: 50%;
@@ -46,9 +46,9 @@
         <!-- 收集用于切换的导航链接、表单和其他内容 -->
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav">
-                <li id="home-page-button" class="active"><a href="static/view/home-page.html" target="main-page">首页</a>
+                <li id="home-page-button" class="active"><a href="/view/home-page.html" target="main-page">首页</a>
                 </li>
-                <li id="blog-button"><a href="static/view/blog.html" target="main-page">博客</a></li>
+                <li id="blog-button"><a href="/view/blog.html" target="main-page">博客</a></li>
             </ul>
             <form class="navbar-form navbar-left">
                 <div class="form-group">
@@ -57,7 +57,7 @@
                 <button type="submit" class="btn btn-danger" id="search-btn">搜索</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li id="register-button"><a href="static/view/register.html" target="main-page">登录/注册</a></li>
+                <li id="register-button"><a href="/view/register.html" target="main-page">登录/注册</a></li>
                 <li id="user-center-button" style="display: none;margin: 5px 30px 2px 100px;">
                     <img id="avatar" alt="个人中心" class="user-center">
                     <div id="toolbar-profile" class="vivify pullDown">
@@ -65,10 +65,10 @@
                             <p class="profile-nickname">nickname</p>
                         </div>
                         <div class="profile-mid">
-                            <a href="static/view/user-center.html?index=1" target="main-page">
+                            <a href="/view/user-center.html?index=1" target="main-page">
                                 <i class="profile-fans-count">-</i>粉丝
                             </a>
-                            <a href="static/view/user-center.html?index=2" target="main-page">
+                            <a href="/view/user-center.html?index=2" target="main-page">
                                 <i class="profile-follow-count">-</i>关注
                             </a>
                             <a href="#">
@@ -78,17 +78,17 @@
                         <div class="profile-bottom">
                             <ul>
                                 <li class="pb-8">
-                                    <a href="static/view/user-center.html?index=0" target="main-page">
+                                    <a href="/view/user-center.html?index=0" target="main-page">
                                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人中心
                                     </a>
                                 </li>
                                 <li class="pb-8">
-                                    <a href="static/view/writing-center.html?index=1" target="_blank">
+                                    <a href="/view/writing-center.html?index=1" target="_blank">
                                         <span class="glyphicon glyphicon-file" aria-hidden="true"></span>内容管理
                                     </a>
                                 </li>
                                 <li class="pb-8">
-                                    <a href="static/view/writing-center.html?index=2" target="_blank">
+                                    <a href="/view/writing-center.html?index=2" target="_blank">
                                         <span class="glyphicon glyphicon-education" aria-hidden="true"></span>专栏管理
                                     </a>
                                 </li>
@@ -103,20 +103,20 @@
                     </div>
                 </li>
                 <li>
-                    <a href="static/view/writing-center.html?index=2" target="_blank">专栏管理</a>
+                    <a href="/view/writing-center.html?index=2" target="_blank">专栏管理</a>
                 </li>
                 <li>
-                    <a href="static/view/user-center.html?index=1" target="main-page">我的粉丝</a>
+                    <a href="/view/user-center.html?index=1" target="main-page">我的粉丝</a>
                 </li>
                 <li>
-                    <a href="static/view/user-center.html?index=2" target="main-page">我的关注</a>
+                    <a href="/view/user-center.html?index=2" target="main-page">我的关注</a>
                 </li>
                 <li>
-                    <a href="static/view/message.html" target="_blank">消息</a>
+                    <a href="/view/message.html" target="_blank">消息</a>
                 </li>
                 <li id="writing-center-button">
                     <button class="writing-center-btn">
-                        <a href="static/view/writing-center.html?index=0" class="btn btn-danger" target="_blank">
+                        <a href="/view/writing-center.html?index=0" class="btn btn-danger" target="_blank">
                             创作中心
                         </a>
                     </button>
@@ -126,13 +126,13 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
-<iframe src="static/view/home-page.html" frameborder="0" name="main-page" id="main-page" onload="changeFrameHeight()"></iframe>
+<iframe src="/view/home-page.html" frameborder="0" name="main-page" id="main-page" onload="changeFrameHeight()"></iframe>
 <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-<script src="static/bootstrap/js/jquery-1.12.4.min.js"></script>
+<script src="/static/bootstrap/js/jquery-1.12.4.min.js"></script>
 <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-<script src="static/bootstrap/js/bootstrap.min.js"></script>
-<script src="static/js/default.js"></script>
-<script src="static/js/jquery.cookie.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/default.js"></script>
+<script src="/js/jquery.cookie.min.js"></script>
 <script type="text/javascript">
     $(function () {
         //如果token正确
@@ -162,7 +162,7 @@
         });
         // 搜索按钮
         $('#search-btn').click(function () {
-            window.open("/static/view/search.html?search=" + escape($('#search-input').val()));
+            window.open("/view/search.html?search=" + escape($('#search-input').val()));
         });
         //鼠标移入和移出，显示或隐藏
         $("#user-center-button").mouseenter(function () {

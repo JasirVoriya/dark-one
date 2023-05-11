@@ -8,11 +8,11 @@
     <title>搜索</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../bootstrap-dialog/css/bootstrap-dialog.min.css">
-    <link rel="stylesheet" href="../css/writing-center.css">
-    <link rel="stylesheet" href="../css/user-center-my-following-list.css">
-    <link rel="stylesheet" href="/static/css/paginator.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap-dialog/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" href="/css/writing-center.css">
+    <link rel="stylesheet" href="/css/user-center-my-following-list.css">
+    <link rel="stylesheet" href="/css/paginator.css">
     <style>
         .app {
             text-align: center;
@@ -122,14 +122,14 @@
 
 
 <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-<script src="../bootstrap/js/jquery-1.12.4.min.js"></script>
-<script src="../js/jquery.cookie.min.js"></script>
+<script src="/static/bootstrap/js/jquery-1.12.4.min.js"></script>
+<script src="/js/jquery.cookie.min.js"></script>
 <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-<script src="../bootstrap/js/bootstrap.min.js"></script>
-<script src="../bootstrap-dialog/js/bootstrap-dialog.min.js"></script>
-<script src="../js/default.js"></script>
-<script src="../js/jqPaginator.js"></script>
-<script src="../js/paginator.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/bootstrap-dialog/js/bootstrap-dialog.min.js"></script>
+<script src="/js/default.js"></script>
+<script src="/js/jqPaginator.js"></script>
+<script src="/js/paginator.js"></script>
 <script type="text/javascript">
     let $search_input;
     let $search_btn;
@@ -148,7 +148,7 @@
                         <img src='/getAvatar?id=${data['user_id']}' alt="" class="following_avatar">
                         <div class="following_content">
                             <div class="following_title">
-                                <a href="/static/view/user-space.html?id=${data['user_id']}" target="_blank">
+                                <a href="/view/user-space.html?id=${data['user_id']}" target="_blank">
                                     <div class="following-name">${data['nickname']}</div>
                                 </a>
                             </div>
@@ -204,7 +204,7 @@
             <div class="consoleHome-listData-left">
                 <span class="consoleHome-listData-mark">分栏</span>
                 <div class="consoleCol-listData-desc">
-                    <a class="col-title" target="_blank" href="/static/view/col-blog.html?col_id=${data['col_id']}&title=${escape(data['name'])}">
+                    <a class="col-title" target="_blank" href="/view/col-blog.html?col_id=${data['col_id']}&title=${escape(data['name'])}">
                         ${data['name']}
                     </a>
                 </div>

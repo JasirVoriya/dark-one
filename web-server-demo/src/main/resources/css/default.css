@@ -12,7 +12,7 @@ body::-webkit-scrollbar {
 }
 
 .default-background {
-    background-image: url(../res/bg2.png);
+    background-image: url(/res/bg2.png);
     /* 让图片不重覆排列 */
     background-repeat:no-repeat;
     /* 固定背景图片位置 */

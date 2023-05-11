@@ -8,18 +8,18 @@
     <title>个人中心</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../bootstrap-dialog/css/bootstrap-dialog.min.css">
-    <link rel="stylesheet" href="../css/animate.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap-dialog/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" href="/css/animate.min.css">
     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../vivify/vivify.min.css">
-    <link rel="stylesheet" href="../css/left-right.css">
-    <link rel="stylesheet" href="../css/user-center-information.css">
-    <link rel="stylesheet" href="../css/user-center-my-fans-list.css">
-    <link rel="stylesheet" href="../css/user-center-my-following-list.css">
-    <link rel="stylesheet" href="../css/user-center-my-avatar.css">
-    <link rel="stylesheet" href="../css/blog-list-item.css">
-    <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="/css/left-right.css">
+    <link rel="stylesheet" href="/css/user-center-information.css">
+    <link rel="stylesheet" href="/css/user-center-my-fans-list.css">
+    <link rel="stylesheet" href="/css/user-center-my-following-list.css">
+    <link rel="stylesheet" href="/css/user-center-my-avatar.css">
+    <link rel="stylesheet" href="/css/blog-list-item.css">
+    <link rel="stylesheet" href="/css/default.css">
     <style type="text/css">
         .collection-box {
             border-radius: 5px;
@@ -185,14 +185,14 @@
 </div>
 
 <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-<script src=" ../bootstrap/js/jquery-1.12.4.min.js"></script>
+<script src=" /static/bootstrap/js/jquery-1.12.4.min.js"></script>
 <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-<script src="../bootstrap/js/bootstrap.min.js"></script>
-<script src="../bootstrap-dialog/js/bootstrap-dialog.min.js"></script>
-<script src="../js/user-center-information.js"></script>
-<script src="../js/default.js"></script>
-<script src="../js/jquery.cookie.min.js"></script>
-<script src="../js/user-center-my-avatar.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/bootstrap-dialog/js/bootstrap-dialog.min.js"></script>
+<script src="/js/user-center-information.js"></script>
+<script src="/js/default.js"></script>
+<script src="/js/jquery.cookie.min.js"></script>
+<script src="/js/user-center-my-avatar.js"></script>
 <script type="text/javascript">
     //正则表达式
     const psw_reg = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$/;
@@ -203,12 +203,12 @@
              <div class="fans_list_item vivify pullDown">
                 <div class="fans_list_item_content">
                     <div class="fans_list_item_left">
-                        <a href='/static/view/user-space.html?id=${data['fans_id']}' target="_blank">
+                        <a href='/view/user-space.html?id=${data['fans_id']}' target="_blank">
                             <img src='/getAvatar?id=${data['fans_id']}' alt="" class="fans_avatar">
                         </a>
                         <div class="fans_content">
                             <div class="fans_title">
-                                <a href='/static/view/user-space.html?id=${data['fans_id']}' target="_blank">
+                                <a href='/view/user-space.html?id=${data['fans_id']}' target="_blank">
                                     <div class="fans-name">${data['nickname']}</div>
                                 </a>
                             </div>
@@ -227,12 +227,12 @@
              <div class="following_list_item vivify pullDown">
                 <div class="following_list_item_content">
                     <div class="following_list_item_left">
-                        <a href='/static/view/user-space.html?id=${data['following_id']}' target="_blank">
+                        <a href='/view/user-space.html?id=${data['following_id']}' target="_blank">
                             <img src='/getAvatar?id=${data['following_id']}' alt="" class="following_avatar">
                         </a>
                         <div class="following_content">
                             <div class="following_title">
-                                <a href='/static/view/user-space.html?id=${data['following_id']}' target="_blank">
+                                <a href='/view/user-space.html?id=${data['following_id']}' target="_blank">
                                     <div class="following-name">${data['nickname']}</div>
                                 </a>
                             </div>
