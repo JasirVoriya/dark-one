@@ -47,8 +47,8 @@ _✨DarkOne，一个应用，一套解决！✨_
 
 ## 镜像站
 如果github卡顿，可以访问下面的Gitee国内镜像站  
-<a href="https://interviewguide.cn/#/" target="_blank">Github 传送门</a>  
-<a href="https://interviewguide.cn/#/" target="_blank">Gitee 传送门</a>
+<a href="https://github.com/dobilibili/dark-one" target="_blank">Github 传送门</a>  
+<a href="https://gitee.com/wu_xueming/dark-one" target="_blank">Gitee 传送门</a>
 
 ## 模块介绍
 ### byte-bye
