@@ -45,6 +45,11 @@ _✨DarkOne，一个应用，一套解决！✨_
 - 易于开发：学习成本低，基于Spring、Netty的使用习惯开发，代码编写上手简单
 - 海纳百川：一个框架，可自定义通信协议，可支持各种应用
 
+## 镜像站
+如果github卡顿，可以访问下面的Gitee国内镜像站  
+<a href="https://interviewguide.cn/#/" target="_blank">Github 传送门</a>  
+<a href="https://interviewguide.cn/#/" target="_blank">Gitee 传送门</a>
+
 ## 模块介绍
 ### byte-bye
 _✨ ByteBye，发送你的数据，和你的数据君一路走好！ ✨_  
